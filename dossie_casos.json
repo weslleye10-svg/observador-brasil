@@ -1,0 +1,507 @@
+{
+  "mensalao": {
+    "nome": "Mensalão",
+    "periodo": "2003–2005; julgamento da AP 470 em 2012",
+    "consulta": "Mensalão",
+    "aliases": [
+      "valerioduto",
+      "José Dirceu",
+      "José Genoino",
+      "Delúbio Soares",
+      "Marcos Valério",
+      "Banco Rural",
+      "SMP&B"
+    ],
+    "esquema": "O STF julgou na AP 470 repasses clandestinos para obtenção de apoio parlamentar, com contratos publicitários, empréstimos simulados e mecanismos de ocultação dos destinatários. As conclusões e penas variaram por réu e por crime.",
+    "impacto": {
+      "rotulo": "Prejuízo total consolidado",
+      "valor": "Não consolidado",
+      "nota": "Não há nesta ficha uma cifra única, judicialmente consolidada, que possa ser atribuída a todos os réus. Valores movimentados, desvio reconhecido em um contrato e multas são medidas diferentes. Não representar ausência de total por zero.",
+      "data": "2012–2019"
+    },
+    "efeito": "Comprometeu a integridade da representação parlamentar e o uso de contratos e recursos ligados ao poder público.",
+    "status": "Houve condenações na AP 470. No recorte oficial de 05/09/2019, Marcos Valério teve progressão ao semiaberto; isso não é absolvição. A execução atual de cada pessoa exige consulta individual e não é deduzida desta notícia histórica.",
+    "status_data": "2019-09-05",
+    "status_tipo": "Condenações históricas; execução individual não consolidada",
+    "pessoas": [
+      {
+        "Nome": "Marcos Valério",
+        "Papel documentado": "Publicitário e operador de repasses",
+        "Situação no registro": "Condenado na AP 470; progressão registrada em 2019",
+        "Fonte": "https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=422681"
+      },
+      {
+        "Nome": "José Dirceu",
+        "Papel documentado": "Ministro-chefe da Casa Civil à época",
+        "Situação no registro": "Condenação por corrupção ativa na AP 470; não confundir com processos da Lava Jato",
+        "Fonte": "https://www.stf.jus.br/arquivo/informativo/documento/informativo682.htm"
+      },
+      {
+        "Nome": "Delúbio Soares",
+        "Papel documentado": "Tesoureiro partidário à época",
+        "Situação no registro": "Integrante do núcleo financeiro examinado na AP 470",
+        "Fonte": "https://www.stf.jus.br/arquivo/informativo/documento/informativo682.htm"
+      },
+      {
+        "Nome": "Banco Rural e SMP&B",
+        "Papel documentado": "Instituições e empresas citadas nos mecanismos de repasse",
+        "Situação no registro": "As imputações são individualizadas; a citação não equivale à culpa de todo empregado",
+        "Fonte": "https://www.stf.jus.br/arquivo/informativo/documento/informativo682.htm"
+      }
+    ],
+    "autoridades": [
+      {
+        "Nome": "Joaquim Barbosa",
+        "Papel documentado": "Relator da AP 470",
+        "Situação no registro": "Autoridade julgadora; esta função não indica participação na fraude",
+        "Fonte": "https://www.stf.jus.br/arquivo/informativo/documento/informativo682.htm"
+      },
+      {
+        "Nome": "Luís Roberto Barroso",
+        "Papel documentado": "Relator da execução penal de Marcos Valério",
+        "Situação no registro": "Decidiu sobre progressão de regime em 2019; autoridade julgadora",
+        "Fonte": "https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=422681"
+      }
+    ],
+    "constitucional": "CF/88, arts. 37, caput; 5º, LIV, LV e LVII; e 102, I, b, nos limites da competência penal originária.",
+    "argumento": "A responsabilização requer prova de autoria, materialidade e elemento subjetivo, com controle do uso de recursos públicos.",
+    "limite": "Progressão, indulto ou extinção de pena não equivalem à absolvição; nulidade de outro processo não desfaz automaticamente a AP 470.",
+    "precedente": "AP 470: julgamento específico com decisões individualizadas por crime e réu.",
+    "fontes": [
+      {
+        "titulo": "STF — Informativo 682, AP 470",
+        "url": "https://www.stf.jus.br/arquivo/informativo/documento/informativo682.htm",
+        "data": "2012",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "STF — progressão de Marcos Valério",
+        "url": "https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=422681",
+        "data": "05/09/2019",
+        "tipo": "Primária"
+      }
+    ],
+    "verificado_em": "2026-10-26"
+  },
+  "sanguessugas": {
+    "nome": "Sanguessugas / Máfia das Ambulâncias",
+    "periodo": "Fatos em vários anos; operação deflagrada em 2006",
+    "consulta": "Operação Sanguessuga",
+    "aliases": [
+      "Planam",
+      "Unisau",
+      "Darci José Vedoin",
+      "Luiz Antônio Trevisan Vedoin",
+      "José Carlos da Fonseca Júnior",
+      "emendas"
+    ],
+    "esquema": "As ações examinaram emendas e convênios para ambulâncias com direcionamento de licitações a empresas do grupo Planam, superfaturamento e vantagens indevidas. Há processos separados por município, contrato e agente.",
+    "impacto": {
+      "rotulo": "Ressarcimento em uma ação específica",
+      "valor": "R$ 11.856,51",
+      "nota": "Valor original de restituição imposto a Planam e Unisau no recorte judicial citado, antes de correção e juros. Não é o prejuízo total da operação nem uma estimativa nacional.",
+      "data": "Sentença noticiada em 2013"
+    },
+    "efeito": "Desvio ou sobrepreço em compras de saúde reduz a capacidade de atendimento com recursos públicos.",
+    "status": "As fontes registram condenações em ações específicas, incluindo decisões de primeira instância. Não há um processo único que permita dizer que todos os envolvidos estão presos ou que todos os recursos terminaram.",
+    "status_data": "2013 (ano do registro judicial)",
+    "status_tipo": "Ações desmembradas; resultados individuais",
+    "pessoas": [
+      {
+        "Nome": "Darci José Vedoin",
+        "Papel documentado": "Empresário ligado ao grupo Planam",
+        "Situação no registro": "Condenações documentadas em recortes da operação; recursos variam por ação",
+        "Fonte": "https://www.trf1.jus.br/sjgo/noticias/justica-condena-reus-da-operacao-sanguessuga"
+      },
+      {
+        "Nome": "Luiz Antônio Trevisan Vedoin",
+        "Papel documentado": "Empresário ligado ao grupo Planam",
+        "Situação no registro": "Condenações documentadas em recortes da operação",
+        "Fonte": "https://www.trf1.jus.br/sjgo/noticias/justica-condena-reus-da-operacao-sanguessuga"
+      },
+      {
+        "Nome": "Planam e Unisau",
+        "Papel documentado": "Empresas mencionadas na ação de ressarcimento",
+        "Situação no registro": "Restituição solidária no recorte judicial citado",
+        "Fonte": "https://www.trf1.jus.br/sjgo/noticias/justica-condena-reus-da-operacao-sanguessuga"
+      },
+      {
+        "Nome": "José Carlos da Fonseca Júnior",
+        "Papel documentado": "Ex-deputado federal",
+        "Situação no registro": "Condenação de primeira instância noticiada em outro recorte, em 2010",
+        "Fonte": "https://www.cjf.jus.br/cjf/outras-noticias/2010/marco-1/juiza-da-5a-vf-civel-condena-reus-na-operacao-sanguessuga"
+      }
+    ],
+    "autoridades": [],
+    "constitucional": "CF/88, arts. 37, caput e §4º; 5º, LIV, LV e LVII; e 58, §3º, quanto à investigação parlamentar.",
+    "argumento": "Licitações e emendas devem preservar impessoalidade, moralidade e destinação pública dos recursos.",
+    "limite": "Improbidade não se confunde com responsabilidade penal. Exigem-se enquadramento individual, dolo quando exigido e respeito à prescrição e à coisa julgada.",
+    "precedente": "Tema 1.199/STF (ARE 843.989): elemento subjetivo e aplicação temporal da reforma da Lei de Improbidade. É precedente geral relacionado, não decisão que uniformize os resultados desta operação.",
+    "fontes": [
+      {
+        "titulo": "TRF1 — condenações e restituição em ação específica",
+        "url": "https://www.trf1.jus.br/sjgo/noticias/justica-condena-reus-da-operacao-sanguessuga",
+        "data": "2013",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "CJF — sentença em outro recorte da operação",
+        "url": "https://www.cjf.jus.br/cjf/outras-noticias/2010/marco-1/juiza-da-5a-vf-civel-condena-reus-na-operacao-sanguessuga",
+        "data": "08/03/2010",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "STF — Tema 1.199",
+        "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=4652910&numeroProcesso=843989&numeroTema=1199",
+        "data": "Consulta em 26/10/2026",
+        "tipo": "Primária"
+      }
+    ],
+    "verificado_em": "2026-10-26"
+  },
+  "cartoes": {
+    "nome": "Cartões Corporativos",
+    "periodo": "Controvérsias e CPMI em 2008",
+    "consulta": "cartões corporativos",
+    "aliases": [
+      "Matilde Ribeiro",
+      "CPMI dos Cartões",
+      "cartão corporativo",
+      "CGU",
+      "suprimento de fundos"
+    ],
+    "esquema": "A CPMI e auditorias examinaram gastos, saques, justificativas e possível uso irregular do Cartão de Pagamento do Governo Federal. O instrumento é legal; cada despesa precisa ser examinada para distinguir irregularidade, erro administrativo e crime.",
+    "impacto": {
+      "rotulo": "Devolução relatada ao Senado — Matilde",
+      "valor": "R$ 2.815,35",
+      "nota": "Montante registrado no depoimento de 09/04/2008. Não é o total nacional de prejuízos, nem o total de gastos com cartões; despesa pública não equivale automaticamente a desvio.",
+      "data": "09/04/2008"
+    },
+    "efeito": "O caso expôs problemas de prestação de contas e fiscalização de despesas administrativas.",
+    "status": "O registro parlamentar documenta a defesa de Matilde Ribeiro, que admitiu enganos, negou má-fé e relatou devolução orientada pela CGU. Essa audiência não é uma condenação criminal. Desfechos judiciais individuais posteriores não estão consolidados nesta ficha.",
+    "status_data": "2008-04-09",
+    "status_tipo": "Apuração parlamentar e administrativa documentada",
+    "pessoas": [
+      {
+        "Nome": "Matilde Ribeiro",
+        "Papel documentado": "Ex-ministra da Promoção da Igualdade Racial",
+        "Situação no registro": "Admitiu enganos, negou uso pessoal intencional e relatou devolução em audiência",
+        "Fonte": "https://www12.senado.leg.br/noticias/materias/2008/04/09/matilde-ribeiro-atribui-irregularidades-a-erros-e-diz-que-nao-agiu-de-ma-fe"
+      }
+    ],
+    "autoridades": [
+      {
+        "Nome": "CGU e CPMI dos Cartões",
+        "Papel documentado": "Órgãos de auditoria e investigação parlamentar",
+        "Situação no registro": "Órgãos de controle, não integrantes de uma rede de corrupção",
+        "Fonte": "https://www12.senado.leg.br/noticias/materias/2008/04/09/matilde-ribeiro-atribui-irregularidades-a-erros-e-diz-que-nao-agiu-de-ma-fe"
+      }
+    ],
+    "constitucional": "CF/88, arts. 37, caput; 70 e 71 (controle de contas); 58, §3º (CPI); e 5º, LIV e LV.",
+    "argumento": "Publicidade e prestação de contas permitem apurar desvio de finalidade e exigir ressarcimento quando cabível.",
+    "limite": "Gasto elevado ou devolução isolada não bastam para concluir que houve crime; a tipificação e o dolo precisam ser demonstrados no processo adequado.",
+    "precedente": "Tema 1.199/STF: critérios de responsabilização por improbidade e aplicação temporal. Precedente geral, sem conclusão individual sobre a pessoa citada.",
+    "fontes": [
+      {
+        "titulo": "Senado — depoimento e defesa de Matilde Ribeiro",
+        "url": "https://www12.senado.leg.br/noticias/materias/2008/04/09/matilde-ribeiro-atribui-irregularidades-a-erros-e-diz-que-nao-agiu-de-ma-fe",
+        "data": "09/04/2008",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "STF — Tema 1.199",
+        "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=4652910&numeroProcesso=843989&numeroTema=1199",
+        "data": "Consulta em 26/10/2026",
+        "tipo": "Primária"
+      }
+    ],
+    "verificado_em": "2026-10-26"
+  },
+  "lava-jato": {
+    "nome": "Lava Jato / Petrolão",
+    "periodo": "Contratos de diferentes anos; investigação iniciada em 2014",
+    "consulta": "Lava Jato",
+    "aliases": [
+      "Petrolão",
+      "Alberto Youssef",
+      "Paulo Roberto Costa",
+      "Renato Duque",
+      "Odebrecht",
+      "Marcelo Odebrecht",
+      "Lula",
+      "Sergio Moro",
+      "Sérgio Moro",
+      "Edson Fachin",
+      "Gilmar Mendes"
+    ],
+    "esquema": "Investigações e processos examinaram cartel de empreiteiras, pagamentos indevidos e lavagem de dinheiro associados a contratos da Petrobras. Há múltiplos núcleos e processos; uma decisão relativa a um réu ou conjunto de provas não resolve todos os demais casos.",
+    "impacto": {
+      "rotulo": "Baixa contábil reconhecida pela Petrobras",
+      "valor": "R$ 6,194 bilhões",
+      "nota": "Estimativa de gastos adicionais capitalizados indevidamente, reconhecida no balanço de 2014. Não é o prejuízo total da Petrobras, nem a soma de multas, recuperações e perdas econômicas do país.",
+      "data": "Balanço de 2014, divulgado em 22/04/2015"
+    },
+    "efeito": "Afetou patrimônio, governança e contratação da estatal. Efeitos macroeconômicos não podem ser atribuídos a esse valor contábil isoladamente.",
+    "status": "Houve condenações e acordos em diferentes processos, além de anulações específicas. As condenações de Lula proferidas em Curitiba foram anuladas por incompetência; a suspeição de Sergio Moro também foi reconhecida e estendida a ações relacionadas. Lula ficou preso de abril de 2018 a novembro de 2019 (580 dias). Soltura e anulações tiveram fundamentos distintos. Não há condenação válida contra Lula naquelas decisões anuladas.",
+    "status_data": "2021-06-24",
+    "status_tipo": "Resultados diversos; condenações de Lula em Curitiba anuladas",
+    "pessoas": [
+      {
+        "Nome": "Luiz Inácio Lula da Silva",
+        "Papel documentado": "Ex-presidente e réu em processos do recorte de Curitiba",
+        "Situação no registro": "Condenações iniciais anuladas; não apresentar sentenças anuladas como vigentes",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/stf-confirma-anulacao-de-condenacoes-do-ex-presidente-lula-na-lava-jato/"
+      },
+      {
+        "Nome": "Alberto Youssef",
+        "Papel documentado": "Operador financeiro e colaborador nas apurações",
+        "Situação no registro": "Citado nos núcleos investigados; situação penal varia por processo",
+        "Fonte": "https://combateacorrupcao.mpf.mp.br/feeder_novo/lava-jato/acd3bdc860050df595ecae219b5885e4"
+      },
+      {
+        "Nome": "Paulo Roberto Costa",
+        "Papel documentado": "Ex-diretor da Petrobras e colaborador",
+        "Situação no registro": "Atuação e colaboração citadas pelo MPF; situação penal varia por processo",
+        "Fonte": "https://combateacorrupcao.mpf.mp.br/feeder_novo/lava-jato/acd3bdc860050df595ecae219b5885e4"
+      },
+      {
+        "Nome": "Petrobras e empreiteiras",
+        "Papel documentado": "Estatal contratante e empresas investigadas",
+        "Situação no registro": "Responsabilidade de pessoas e empresas deve ser individualizada",
+        "Fonte": "https://api.mziq.com/mzfilemanager/v2/d/25fdf098-34f5-4608-b7fa-17d60b2de47d/7d4560fd-ed28-7579-2ce9-d1d52abf3a38?origin=1"
+      }
+    ],
+    "autoridades": [
+      {
+        "Nome": "Sergio Moro",
+        "Papel documentado": "Ex-juiz de Curitiba",
+        "Situação no registro": "Suspeição reconhecida pelo STF em processos de Lula; não confundir com condenação criminal do ex-juiz",
+        "Fonte": "https://portal.stf.jus.br/processos/detalhe.asp?incidente=5581966"
+      },
+      {
+        "Nome": "Edson Fachin",
+        "Papel documentado": "Ministro do STF",
+        "Situação no registro": "Decisão de incompetência que anulou condenações de Curitiba",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/stf-confirma-anulacao-de-condenacoes-do-ex-presidente-lula-na-lava-jato/"
+      },
+      {
+        "Nome": "Gilmar Mendes",
+        "Papel documentado": "Ministro do STF; redator do acórdão no HC 164.493",
+        "Situação no registro": "Atuação jurisdicional no reconhecimento e extensão da suspeição",
+        "Fonte": "https://portal.stf.jus.br/processos/detalhe.asp?incidente=5581966"
+      }
+    ],
+    "constitucional": "CF/88, arts. 5º, XXXVII, LIII, LIV, LV e LVII (juiz natural, devido processo e defesa); 37, caput; e 102.",
+    "argumento": "O combate a cartel e corrupção exige prova lícita, responsabilização individual e recuperação de recursos quando reconhecida judicialmente.",
+    "limite": "Juiz competente e imparcial são condições de validade. Anulação processual não é julgamento de mérito de toda a operação; uma sentença anulada não pode ser exibida como condenação em vigor.",
+    "precedente": "HC 193.726: competência; HC 164.493: suspeição e extensão a ações conexas. A AP 470 é processo distinto e não é automaticamente atingida por essas decisões.",
+    "fontes": [
+      {
+        "titulo": "Petrobras — resultado auditado de 2014",
+        "url": "https://api.mziq.com/mzfilemanager/v2/d/25fdf098-34f5-4608-b7fa-17d60b2de47d/7d4560fd-ed28-7579-2ce9-d1d52abf3a38?origin=1",
+        "data": "22/04/2015",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "STF — confirmação da anulação por incompetência",
+        "url": "https://noticias.stf.jus.br/postsnoticias/stf-confirma-anulacao-de-condenacoes-do-ex-presidente-lula-na-lava-jato/",
+        "data": "15/04/2021",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "STF — HC 164.493 e decisões de extensão",
+        "url": "https://portal.stf.jus.br/processos/detalhe.asp?incidente=5581966",
+        "data": "2021; consulta em 26/10/2026",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "Agência Brasil — cronologia, prisão e soltura de Lula",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2022-12/lula-entra-para-historia-da-redemocratizacao-com-3o-mandato",
+        "data": "01/01/2023",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "MPF — contexto das apurações sobre Youssef e Costa",
+        "url": "https://combateacorrupcao.mpf.mp.br/feeder_novo/lava-jato/acd3bdc860050df595ecae219b5885e4",
+        "data": "Balanço de dois anos da operação, 2016",
+        "tipo": "Primária"
+      }
+    ],
+    "verificado_em": "2026-10-26"
+  },
+  "pasadena": {
+    "nome": "Refinaria de Pasadena",
+    "periodo": "Aquisição em 2006 e desdobramentos posteriores",
+    "consulta": "refinaria de Pasadena",
+    "aliases": [
+      "Pasadena",
+      "Petrobras",
+      "Astra",
+      "Dilma Rousseff",
+      "Antonio Palocci",
+      "Antônio Palocci",
+      "José Sergio Gabrielli",
+      "Nestor Cerveró"
+    ],
+    "esquema": "O TCU apurou possível aquisição prejudicial à Petrobras, com avaliação de preço, cláusulas contratuais, compra da participação remanescente e decisões relacionadas à arbitragem. Responsabilidade de diretores, conselheiros e demais agentes não é idêntica.",
+    "impacto": {
+      "rotulo": "Dano estimado na apuração inicial do TCU",
+      "valor": "US$ 792 milhões",
+      "nota": "Estimativa do Acórdão 1.927/2014. Não é condenação definitiva de todas as pessoas relacionadas, nem valor atualizado ou convertido para reais. Desfechos posteriores precisam ser considerados por responsável.",
+      "data": "23/07/2014"
+    },
+    "efeito": "O caso envolve patrimônio da Petrobras, diligência de administradores e qualidade da governança de investimentos.",
+    "status": "A apuração inicial de 2014 teve desdobramentos individualizados. No recorte noticiado em 14/04/2021, o TCU absolveu Dilma Rousseff, Antonio Palocci e outros ex-conselheiros, com contas regulares com ressalvas. Esse resultado não pode ser omitido ao citar seus nomes. O saldo atual de todos os recursos e débitos não está consolidado nesta ficha.",
+    "status_data": "2021-04-14",
+    "status_tipo": "Decisões administrativas distintas por responsável",
+    "pessoas": [
+      {
+        "Nome": "Petrobras e Astra",
+        "Papel documentado": "Partes da operação de compra",
+        "Situação no registro": "Operação e contratos examinados pelo TCU",
+        "Fonte": "https://portal.tcu.gov.br/imprensa/noticias/tcu-identifica-dano-em-compra-da-refinaria-de-pasadena-pela-petrobras"
+      },
+      {
+        "Nome": "Diretores e administradores da Petrobras",
+        "Papel documentado": "Agentes citados na apuração inicial",
+        "Situação no registro": "Citação para defesa no Acórdão 1.927/2014 não equivale à condenação definitiva",
+        "Fonte": "https://portal.tcu.gov.br/imprensa/noticias/tcu-identifica-dano-em-compra-da-refinaria-de-pasadena-pela-petrobras"
+      },
+      {
+        "Nome": "Dilma Rousseff e Antonio Palocci",
+        "Papel documentado": "Ex-integrantes do Conselho de Administração",
+        "Situação no registro": "Absolvição administrativa no recorte de 2021, conforme notícia de desfecho",
+        "Fonte": "https://www.bol.uol.com.br/noticias/2021/04/14/tcu-absolve-dilma-e-palocci-por-irregularidade-na-compra-da-refinaria-de-pasadena.htm"
+      }
+    ],
+    "autoridades": [],
+    "constitucional": "CF/88, arts. 70 e 71, II e §3º (controle externo); 37, caput; e 5º, LIV e LV.",
+    "argumento": "A administração de estatal está sujeita a controle de legalidade, diligência e eventual recomposição de dano comprovado.",
+    "limite": "Operação malsucedida, prejuízo econômico, improbidade e crime são categorias diferentes. Decisão administrativa e condenação penal não são equivalentes.",
+    "precedente": "Tema 899/STF (RE 636.886): prescritibilidade da pretensão de ressarcimento fundada em decisão de Tribunal de Contas. Precedente geral; não resolve sozinho o caso Pasadena.",
+    "fontes": [
+      {
+        "titulo": "TCU — Acórdão 1.927/2014 e estimativa inicial",
+        "url": "https://portal.tcu.gov.br/imprensa/noticias/tcu-identifica-dano-em-compra-da-refinaria-de-pasadena-pela-petrobras",
+        "data": "23/07/2014",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "STF — Tema 899, precedente geral de ressarcimento",
+        "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=4046531&numeroProcesso=636886&numeroTema=899",
+        "data": "Precedente geral de ressarcimento",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "TCU — Acórdão 834/2021 (consulta processual)",
+        "url": "https://pesquisa.apps.tcu.gov.br/doc/acordao-completo/834/2021/Plen%C3%A1rio",
+        "data": "14/04/2021",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "UOL — desfecho de 2021 relativo a ex-conselheiros",
+        "url": "https://www.bol.uol.com.br/noticias/2021/04/14/tcu-absolve-dilma-e-palocci-por-irregularidade-na-compra-da-refinaria-de-pasadena.htm",
+        "data": "14/04/2021",
+        "tipo": "Secundária"
+      }
+    ],
+    "verificado_em": "2026-10-26"
+  },
+  "banco-master": {
+    "nome": "Banco Master / Compliance Zero",
+    "periodo": "Investigações iniciadas em 2024; operação desde 2025",
+    "consulta": "Banco Master",
+    "aliases": [
+      "Compliance Zero",
+      "Daniel Vorcaro",
+      "Paulo Henrique Costa",
+      "BRB",
+      "André Mendonça",
+      "Dias Toffoli",
+      "Edson Fachin",
+      "Banco Central"
+    ],
+    "esquema": "As apurações examinam supostas fraudes financeiras, ativos sem lastro e relações entre o Banco Master, outras instituições e agentes públicos. Em março de 2026, a PF informou diligências por suspeitas de ameaça, corrupção, lavagem de dinheiro e invasão de dispositivos. As alegações precisam ser apreciadas nos processos próprios.",
+    "impacto": {
+      "rotulo": "Limite de bloqueio anunciado em uma fase",
+      "valor": "Até R$ 22 bilhões",
+      "nota": "Sequestro e bloqueio de bens determinados na terceira fase, segundo a PF. Um teto de bloqueio não é o montante efetivamente recuperado nem um prejuízo definitivo. Não somar ao valor de carteiras, garantias ou perdas estimadas.",
+      "data": "04/03/2026"
+    },
+    "efeito": "Há risco patrimonial e de governança para instituições e investidores. Exposição financeira, passivo, garantia e dano criminal exigem apurações distintas.",
+    "status": "A nota conjunta da PF e do STF de 13/10/2026 registra investigações e encaminhamentos pendentes relacionados ao Master. Há prisões e cautelares documentadas em fases anteriores, sem que isso constitua condenação definitiva. A situação cautelar de cada pessoa deve ser consultada no processo; não é inferida da fase antiga nem de manchetes.",
+    "status_data": "2026-10-13",
+    "status_tipo": "Investigação em andamento no último registro oficial",
+    "pessoas": [
+      {
+        "Nome": "Daniel Vorcaro",
+        "Papel documentado": "Banqueiro ligado ao Banco Master",
+        "Situação no registro": "Investigado; prisão preventiva registrada em 04/03/2026, sem afirmação sobre custódia atual",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/stf-atende-a-pedido-da-pf-e-determina-prisao-de-daniel-vorcaro-e-outros-investigados-por-supostas-fraudes-no-banco-master"
+      },
+      {
+        "Nome": "Paulo Henrique Costa",
+        "Papel documentado": "Dirigente do BRB à época dos fatos",
+        "Situação no registro": "Ouvido em diligências documentadas; isso não equivale à condenação",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/nota-do-gabinete-do-ministro-dias-toffoli-2/"
+      },
+      {
+        "Nome": "Banco Master e BRB",
+        "Papel documentado": "Instituições relacionadas às operações examinadas",
+        "Situação no registro": "Responsabilidades de instituições e pessoas devem ser apuradas separadamente",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/nota-do-gabinete-do-ministro-dias-toffoli-2/"
+      }
+    ],
+    "autoridades": [
+      {
+        "Nome": "André Mendonça",
+        "Papel documentado": "Ministro do STF que autorizou diligências",
+        "Situação no registro": "Autoridade judicial; a função de relator não o inclui entre os autores da fraude",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/stf-atende-a-pedido-da-pf-e-determina-prisao-de-daniel-vorcaro-e-outros-investigados-por-supostas-fraudes-no-banco-master"
+      },
+      {
+        "Nome": "Dias Toffoli",
+        "Papel documentado": "Relator inicialmente sorteado no STF",
+        "Situação no registro": "Atuação documentada em nota do gabinete; não inferir responsabilidade por ser ministro ou relator",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/nota-do-gabinete-do-ministro-dias-toffoli-2/"
+      },
+      {
+        "Nome": "Edson Fachin e Andrei Rodrigues",
+        "Papel documentado": "Presidente do STF e diretor-geral da PF no registro de outubro",
+        "Situação no registro": "Atuação institucional em encaminhamentos das apurações",
+        "Fonte": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/10/nota-a-imprensa-2"
+      }
+    ],
+    "constitucional": "CF/88, arts. 5º, LIV, LV e LVII; 102, I, b, conforme a competência; e 144, §1º, quanto à PF.",
+    "argumento": "Medidas investigativas e cautelares fundamentadas podem preservar provas e patrimônio, respeitada a competência constitucional.",
+    "limite": "Suspeita, menção em documento, prisão preventiva e condenação são situações distintas. Autoridades julgadoras ou fiscalizadoras não são investigadas só porque atuam no caso.",
+    "precedente": "No recorte consultado não se identifica decisão definitiva de mérito que condene toda a rede. A nota oficial de outubro trata de competências e encaminhamentos; não é um julgamento condenatório.",
+    "fontes": [
+      {
+        "titulo": "PF — terceira fase e limite de bloqueio",
+        "url": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/03/policia-federal-deflagra-3a-fase-da-operacao-compliance-zero",
+        "data": "04/03/2026",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "STF — prisão preventiva e fundamentos da cautelar",
+        "url": "https://noticias.stf.jus.br/postsnoticias/stf-atende-a-pedido-da-pf-e-determina-prisao-de-daniel-vorcaro-e-outros-investigados-por-supostas-fraudes-no-banco-master",
+        "data": "04/03/2026",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "STF — nota do gabinete sobre relatoria inicial e oitivas",
+        "url": "https://noticias.stf.jus.br/postsnoticias/nota-do-gabinete-do-ministro-dias-toffoli-2/",
+        "data": "Janeiro/2026",
+        "tipo": "Primária"
+      },
+      {
+        "titulo": "PF/STF — nota sobre encaminhamentos atuais",
+        "url": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/10/nota-a-imprensa-2",
+        "data": "13/10/2026",
+        "tipo": "Primária"
+      }
+    ],
+    "verificado_em": "2026-10-26"
+  }
+}
