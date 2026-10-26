@@ -88,7 +88,7 @@ def exibir_divida_reais(resultados):
         periodo = atual.data.to_period('M')
         if periodo in pct.index:
             linhas.append({'Informação':'Dívida / PIB no mesmo mês','Valor':numero(pct.loc[periodo,'valor'])+'%','Referência':str(periodo)})
-    st.dataframe(pd.DataFrame(linhas),hide_index=True,width='stretch')
+    st.table(pd.DataFrame(linhas).drop(columns='Referência').set_index('Informação'))
     st.caption('Estoque de dívida: não é despesa de um único ano nem a conta anual de juros. A variação do saldo também reflete emissões, resgates, câmbio e outros ajustes.')
     st.markdown('[Fonte: BCB — dívida bruta em reais, SGS 13761](https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarSeries&series=13761)')
 
@@ -178,16 +178,18 @@ def exibir_salario(resultados):
     st.write(f'O aumento do salário mínimo **{leitura} pelo {nome}** neste período.')
     linhas = [
         ('Salário no início',reais(c['anterior'])),('Salário no fim',reais(c['atual'])),
-        ('Aumento nominal em reais',reais(c['atual']-c['anterior'])),
-        ('Aumento nominal percentual',numero(c['reajuste_pct'])+'%'),
-        ('Inflação nos mesmos 12 meses',numero(c['inflacao_pct'])+'%'),
-        ('Salário necessário apenas para repor a inflação',reais(c['recomposto'])),
-        ('Diferença acima/abaixo dessa reposição',reais(c['diferenca'])),
-        ('Ganho ou perda real de poder de compra',numero(c['ganho_real_pct'])+'%'),
+        ('Aumento em reais',reais(c['atual']-c['anterior'])),
+        ('Aumento percentual',numero(c['reajuste_pct'])+'%'),
+        ('Inflação no período',numero(c['inflacao_pct'])+'%'),
+        ('Salário que reporia a inflação',reais(c['recomposto'])),
+        ('Acima/abaixo da reposição',reais(c['diferenca'])),
+        ('Ganho/perda real',numero(c['ganho_real_pct'])+'%'),
     ]
     st.table(pd.DataFrame(linhas,columns=['Comparação','Resultado']).set_index('Comparação'))
-    st.caption(f'Inflação acumulada de {(c["inicio"]+1).strftime("%m/%Y")} a {c["fim"].strftime("%m/%Y")}. Ganho real = (salário final / salário inicial) / fator de inflação − 1. A diferença em reais está a preços do fim do período. Não comparamos uma taxa percentual diretamente com um valor em reais.')
-    st.caption('Esta é uma comparação estatística de poder de compra. Não reproduz a regra legal de reajuste do salário mínimo. Não usa inflação de um período diferente para concluir se houve ganho real.')
+    st.caption(f'Inflação acumulada de {(c["inicio"]+1).strftime("%m/%Y")} a {c["fim"].strftime("%m/%Y")}. A diferença em reais está a preços do fim do período.')
+    with st.expander('Fórmulas e critérios da comparação'):
+        st.write('Ganho real = (salário final / salário inicial) / fator de inflação − 1. Salário que reporia a inflação = salário inicial × fator acumulado.')
+        st.caption('Comparamos o salário no mesmo mês de anos consecutivos e acumulamos os 12 meses intermediários de inflação. É uma comparação estatística de poder de compra; a regra legal de reajuste do salário mínimo possui critérios próprios.')
     st.markdown('[Salário mínimo — SGS 1619](https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarSeries&series=1619) · [INPC — IBGE](https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9258-indice-nacional-de-precos-ao-consumidor.html)')
 
 
