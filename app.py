@@ -252,13 +252,30 @@ def exibir_estados(resultados):
         for f in geo['features']:
             f['properties']['codarea'] = str(f['properties']['codarea'])
         ordenados['leitura'] = ordenados['Valor exato']+' · '+ordenados['Ano'].astype(str)
-        fig = px.choropleth(ordenados,geojson=geo,locations='codigo',featureidkey='properties.codarea',
-            color=indicador,hover_name='Estado',custom_data=['leitura'],color_continuous_scale='Blues')
-        fig.update_traces(hovertemplate='<b>%{hovertext}</b><br>%{customdata[0]}<extra></extra>',marker_line_width=.7,marker_line_color='#94a3b8')
-        fig.update_geos(fitbounds='locations',visible=False,projection_type='mercator')
-        fig.update_layout(height=460,margin=dict(l=0,r=0,t=5,b=20),separators=',.',
-            coloraxis_colorbar=dict(title=dict(text='Habitantes' if indicador=='População' else '%' if '(%)' in indicador else 'Por 100 mil'),orientation='h',thickness=10,len=.8))
+        # Desenha os polígonos locais diretamente: sem tiles ou TopoJSON externos.
+        fig = go.Figure()
+        baixo, alto = float(ordenados[indicador].min()), float(ordenados[indicador].max())
+        por_codigo = ordenados.set_index('codigo')
+        for feature in geo['features']:
+            registro = por_codigo.loc[str(feature['properties']['codarea'])]
+            t = (float(registro[indicador])-baixo)/(alto-baixo) if alto>baixo else .5
+            cor = px.colors.sample_colorscale('Blues', [.2+.8*t])[0]
+            geometria = feature['geometry']
+            poligonos = [geometria['coordinates']] if geometria['type']=='Polygon' else geometria['coordinates']
+            for poligono in poligonos:
+                contorno = poligono[0]
+                fig.add_trace(go.Scatter(x=[pt[0] for pt in contorno],y=[pt[1] for pt in contorno],
+                    mode='lines',fill='toself',fillcolor=cor,legendgroup=registro['UF'],
+                    line=dict(color='#38bdf8' if registro['Estado']==estado else '#64748b',
+                              width=2 if registro['Estado']==estado else .7),
+                    text=f"<b>{registro['Estado']}</b><br>{registro['leitura']}",
+                    hoverinfo='text',hoveron='fills',showlegend=False))
+        fig.update_layout(height=440,margin=dict(l=5,r=5,t=5,b=5),dragmode=False,
+            paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)',
+            xaxis=dict(visible=False,fixedrange=True,range=[-75,-33]),
+            yaxis=dict(visible=False,fixedrange=True,range=[-35,6],scaleanchor='x',scaleratio=1))
         st.plotly_chart(fig,width='stretch',config={'displayModeBar':False,'scrollZoom':False})
+        st.caption(f'Tons mais escuros indicam valores maiores. Intervalo: {br(baixo,0 if indicador=="População" else 1)} a {br(alto,0 if indicador=="População" else 1)} {unidade}. Contorno azul: estado escolhido.')
         st.caption('Toque no estado para ver o valor. Para consultar todos os indicadores sem gestos de zoom, use o seletor Estado acima. Geometria oficial do IBGE incluída no projeto.')
 
 
