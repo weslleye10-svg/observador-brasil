@@ -12,6 +12,7 @@ import requests
 import streamlit as st
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from monetario import exibir_divida_reais, exibir_monetario, converter_divida_milhoes
 
 ROOT = Path(__file__).parent
 TZ = ZoneInfo('America/Sao_Paulo')
@@ -121,7 +122,12 @@ def consultar(agora):
     inicio = agora.date() - timedelta(days=365*anos)
     resultados, erros = {}, {}
     with ThreadPoolExecutor(max_workers=8) as pool:
-        tarefas = {pool.submit(obter_sgs, c[0], inicio, agora.date()): nome for nome,c in CONFIG.items()}
+        # Mantém ao menos dois anos civis de IPCA para comparações salariais completas.
+        inicio_comparacao = min(inicio, agora.date().replace(year=agora.year-1,month=1,day=1))
+        tarefas = {pool.submit(obter_sgs, c[0], inicio_comparacao if c[0]==433 else inicio, agora.date()): nome for nome,c in CONFIG.items()}
+        tarefas[pool.submit(obter_sgs,13761,inicio,agora.date())] = 'Dívida em reais'
+        tarefas[pool.submit(obter_sgs,1619,inicio_comparacao,agora.date())] = 'Salário mínimo'
+        tarefas[pool.submit(obter_sgs,188,inicio_comparacao,agora.date())] = 'INPC mensal'
         tarefas[pool.submit(obter_sidra, 6579, 9324)] = 'populacao'
         tarefas[pool.submit(obter_sidra, 5877, 9948)] = 'pobreza'
         tarefas[pool.submit(obter_sidra, 7113, 10267, '/c2/6794/c58/2795')] = 'educacao'
@@ -132,7 +138,7 @@ def consultar(agora):
                 resultados[nome] = tarefa.result()
             except (requests.RequestException, ValueError, KeyError, TypeError) as exc:
                 erros[nome] = str(exc)
-    return {'resultados':resultados, 'erros':erros, 'hora':datetime.now(TZ), 'anos':anos}
+    return {'resultados':resultados, 'erros':erros, 'hora':datetime.now(TZ), 'anos':anos, 'versao':3}
 
 
 def tabela_economica(df, codigo):
@@ -159,15 +165,23 @@ def exibir_economia(resultados, hora):
                 st.metric(nome, br(atual.valor)+'%')
                 ref = atual.data.strftime('%d/%m/%Y' if codigo == 432 else '%m/%Y')
                 st.caption(f'{unidade} · referência {ref}')
+                if nome=='Dívida bruta' and 'Dívida em reais' in resultados:
+                    saldo = resultados['Dívida em reais'].iloc[-1]
+                    st.caption(f'R$ {br(converter_divida_milhoes(saldo.valor)/1e9)} bilhões · {saldo.data:%m/%Y}')
                 fim_ref = atual.data if codigo == 432 else atual.data + pd.offsets.MonthEnd(0)
                 if (pd.Timestamp(hora.date())-fim_ref).days > limite:
                     st.warning('Referência antiga. Consulte o calendário da fonte.')
+    exibir_divida_reais(resultados)
+    exibir_monetario(resultados)
     disponiveis = [nome for nome in CONFIG if nome in resultados]
     if not disponiveis:
         return
+    st.subheader('Evolução dos indicadores')
     nome = st.selectbox('Qual indicador você quer acompanhar?', disponiveis, key='grafico_indicador')
     codigo, unidade, explicacao, _ = CONFIG[nome]
     df = resultados[nome].copy()
+    corte = pd.Timestamp(hora.date()-timedelta(days=365*anos))
+    df = df[df.data>=corte].copy()
     st.write(explicacao)
     if df.attrs.get('historico_limitado'):
         st.info('O histórico completo não respondeu. Exibindo as últimas observações obtidas diretamente no BCB nesta consulta.')
@@ -302,7 +316,7 @@ def exibir_agenda(resultados):
 def painel():
     agora = datetime.now(TZ)
     consulta = st.session_state.get('consulta')
-    if consulta is None or consulta['anos'] != anos or (agora-consulta['hora']).total_seconds() >= 300:
+    if consulta is None or consulta.get('versao') != 3 or consulta['anos'] != anos or (agora-consulta['hora']).total_seconds() >= 300:
         with st.spinner('Consultando fontes públicas…'):
             consulta = consultar(agora)
         st.session_state['consulta'] = consulta
