@@ -28,7 +28,7 @@ def json_api(url, params=None):
                       status_forcelist=[429, 500, 502, 503, 504],
                       respect_retry_after_header=False)
         session.mount("https://", HTTPAdapter(max_retries=retry))
-        response = session.get(url, params=params, timeout=(5, 20),
+        response = session.get(url, params=params, timeout=(15, 30),
                                headers={"Accept": "application/json", "Cache-Control": "no-cache"})
         response.raise_for_status()
         return response.json()
@@ -131,8 +131,11 @@ def painel():
             df = resultados[nome]
             atual = df.iloc[-1]
             st.metric(nome, f"{atual.valor:.2f}".replace(".", ","), help=unidade)
-            st.caption(f"{unidade} • referência {atual.data:%d/%m/%Y} • SGS {codigo}")
-            if (pd.Timestamp(hoje) - atual.data).days > limite:
+            mensal = codigo != 432
+            referencia = atual.data.strftime("%m/%Y" if mensal else "%d/%m/%Y")
+            st.caption(f"{unidade} • referência {referencia} • SGS {codigo}")
+            fim_referencia = atual.data + pd.offsets.MonthEnd(0) if mensal else atual.data
+            if (pd.Timestamp(hoje) - fim_referencia).days > limite:
                 st.warning("Referência antiga: confira o calendário de divulgação da fonte.")
     for nome in ("Dívida bruta / PIB", "IPCA em 12 meses", "Meta Selic"):
         if nome in resultados:
