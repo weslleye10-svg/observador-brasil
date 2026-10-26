@@ -340,9 +340,9 @@ def painel():
 
 # Duas áreas principais; a visão geral mantém Economia, Estados e Agenda.
 tab1, tab2 = st.tabs(["Visão Geral e Macroeconomia", "Dossiê de Corrupção"])
-with tab1:
-    painel()
 with tab2:
     # Dicionário histórico documentado; busca web implementada em dossie.buscar_noticias.
     casos_historicos = carregar_casos()
     exibir_dossie(casos_historicos)
+with tab1:
+    painel()
