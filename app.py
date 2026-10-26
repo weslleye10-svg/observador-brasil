@@ -36,6 +36,7 @@ st.markdown('''<style>
 .block-container{max-width:1120px;padding-top:2rem;padding-bottom:3rem}
 [data-testid="stMetricValue"]{font-variant-numeric:tabular-nums}
 [data-testid="stMetricLabel"] p{font-weight:600}
+[data-testid="stTable"] td:last-child{white-space:nowrap}
 @media(max-width:640px){.block-container{padding:1rem .85rem 3rem}h1{font-size:1.7rem!important}h2{font-size:1.35rem!important}h3{font-size:1.15rem!important}[data-testid="stMetricValue"]{font-size:2rem!important}}
 </style>''', unsafe_allow_html=True)
 st.title('Observador Brasil')
