@@ -13,6 +13,7 @@ import streamlit as st
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from monetario import exibir_divida_reais, exibir_monetario, converter_divida_milhoes
+from dossie import carregar_casos, exibir_dossie
 
 ROOT = Path(__file__).parent
 TZ = ZoneInfo('America/Sao_Paulo')
@@ -37,6 +38,7 @@ st.markdown('''<style>
 [data-testid="stMetricValue"]{font-variant-numeric:tabular-nums}
 [data-testid="stMetricLabel"] p{font-weight:600}
 [data-testid="stTable"] td:last-child{white-space:nowrap}
+@media(max-width:640px){[role="tab"]{height:auto!important;min-height:2.5rem;max-width:180px}[role="tab"] p{white-space:normal!important;line-height:1.25!important}}
 @media(max-width:640px){.block-container{padding:1rem .85rem 3rem}h1{font-size:1.7rem!important}h2{font-size:1.35rem!important}h3{font-size:1.15rem!important}[data-testid="stMetricValue"]{font-size:2rem!important}}
 </style>''', unsafe_allow_html=True)
 st.title('Observador Brasil')
@@ -336,4 +338,11 @@ def painel():
                 st.text(f'{fonte}: {erro[:300]}')
 
 
-painel()
+# Duas áreas principais; a visão geral mantém Economia, Estados e Agenda.
+tab1, tab2 = st.tabs(["Visão Geral e Macroeconomia", "Dossiê de Corrupção"])
+with tab1:
+    painel()
+with tab2:
+    # Dicionário histórico documentado; busca web implementada em dossie.buscar_noticias.
+    casos_historicos = carregar_casos()
+    exibir_dossie(casos_historicos)
