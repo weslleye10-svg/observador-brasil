@@ -1,0 +1,837 @@
+{
+  "indicadores": {
+    "mvi": {
+      "dados": [
+        {
+          "Estado": "Brasil",
+          "total": 40775.0,
+          "taxa": 19.105426800076884
+        },
+        {
+          "Estado": "Acre",
+          "total": 191.0,
+          "taxa": 21.59724640762032
+        },
+        {
+          "Estado": "Alagoas",
+          "total": 1066.0,
+          "taxa": 33.096873866758074
+        },
+        {
+          "Estado": "Amapá",
+          "total": 343.0,
+          "taxa": 42.52855178502127
+        },
+        {
+          "Estado": "Amazonas",
+          "total": 799.0,
+          "taxa": 18.488454318939954
+        },
+        {
+          "Estado": "Bahia",
+          "total": 5473.0,
+          "taxa": 36.80340412323203
+        },
+        {
+          "Estado": "Ceará",
+          "total": 3220.0,
+          "taxa": 34.74006876375847
+        },
+        {
+          "Estado": "Distrito Federal",
+          "total": 287.0,
+          "taxa": 9.576565643353346
+        },
+        {
+          "Estado": "Espírito Santo",
+          "total": 907.0,
+          "taxa": 21.978000675575146
+        },
+        {
+          "Estado": "Goiás",
+          "total": 1222.0,
+          "taxa": 16.460951914488184
+        },
+        {
+          "Estado": "Maranhão",
+          "total": 2082.0,
+          "taxa": 29.665679757989608
+        },
+        {
+          "Estado": "Mato Grosso",
+          "total": 890.0,
+          "taxa": 22.857677059033673
+        },
+        {
+          "Estado": "Mato Grosso do Sul",
+          "total": 591.0,
+          "taxa": 20.207677481364314
+        },
+        {
+          "Estado": "Minas Gerais",
+          "total": 2770.0,
+          "taxa": 12.947893702560517
+        },
+        {
+          "Estado": "Pará",
+          "total": 2477.0,
+          "taxa": 28.4346718866158
+        },
+        {
+          "Estado": "Paraíba",
+          "total": 1023.0,
+          "taxa": 24.564962439380015
+        },
+        {
+          "Estado": "Paraná",
+          "total": 1844.0,
+          "taxa": 15.508156625990274
+        },
+        {
+          "Estado": "Pernambuco",
+          "total": 3159.0,
+          "taxa": 33.03699735839976
+        },
+        {
+          "Estado": "Piauí",
+          "total": 579.0,
+          "taxa": 17.10716382428727
+        },
+        {
+          "Estado": "Rio de Janeiro",
+          "total": 3890.0,
+          "taxa": 22.58535945005985
+        },
+        {
+          "Estado": "Rio Grande do Norte",
+          "total": 1007.0,
+          "taxa": 29.14417423296122
+        },
+        {
+          "Estado": "Rio Grande do Sul",
+          "total": 1266.0,
+          "taxa": 11.270100237126114
+        },
+        {
+          "Estado": "Rondônia",
+          "total": 493.0,
+          "taxa": 28.14007249065327
+        },
+        {
+          "Estado": "Roraima",
+          "total": 144.0,
+          "taxa": 19.491805320179974
+        },
+        {
+          "Estado": "Santa Catarina",
+          "total": 622.0,
+          "taxa": 7.59738361742703
+        },
+        {
+          "Estado": "São Paulo",
+          "total": 3615.0,
+          "taxa": 7.844745477721238
+        },
+        {
+          "Estado": "Sergipe",
+          "total": 508.0,
+          "taxa": 22.092479641649543
+        },
+        {
+          "Estado": "Tocantins",
+          "total": 307.0,
+          "taxa": 19.34639435513804
+        }
+      ],
+      "unidade": "por 100 mil habitantes",
+      "tabela": "T01",
+      "ano": 2025
+    },
+    "homicidios": {
+      "dados": [
+        {
+          "Estado": "Brasil",
+          "total": 32914.0,
+          "taxa": 15.422097307117854
+        },
+        {
+          "Estado": "Acre",
+          "total": 175.0,
+          "taxa": 19.788052991275165
+        },
+        {
+          "Estado": "Alagoas",
+          "total": 934.0,
+          "taxa": 28.99857428851036
+        },
+        {
+          "Estado": "Amapá",
+          "total": 195.0,
+          "taxa": 24.17803964454562
+        },
+        {
+          "Estado": "Amazonas",
+          "total": 728.0,
+          "taxa": 16.8455503681956
+        },
+        {
+          "Estado": "Bahia",
+          "total": 3765.0,
+          "taxa": 25.31789083207904
+        },
+        {
+          "Estado": "Ceará",
+          "total": 2976.0,
+          "taxa": 32.107591503399135
+        },
+        {
+          "Estado": "Distrito Federal",
+          "total": 253.0,
+          "taxa": 8.442059608949117
+        },
+        {
+          "Estado": "Espírito Santo",
+          "total": 796.0,
+          "taxa": 19.28830048264368
+        },
+        {
+          "Estado": "Goiás",
+          "total": 813.0,
+          "taxa": 10.951517108411533
+        },
+        {
+          "Estado": "Maranhão",
+          "total": 1865.0,
+          "taxa": 26.57372370252191
+        },
+        {
+          "Estado": "Mato Grosso",
+          "total": 728.0,
+          "taxa": 18.6970661786253
+        },
+        {
+          "Estado": "Mato Grosso do Sul",
+          "total": 486.0,
+          "taxa": 16.617480974522937
+        },
+        {
+          "Estado": "Minas Gerais",
+          "total": 2698.0,
+          "taxa": 12.611341952891076
+        },
+        {
+          "Estado": "Pará",
+          "total": 1746.0,
+          "taxa": 20.043172028272583
+        },
+        {
+          "Estado": "Paraíba",
+          "total": 936.0,
+          "taxa": 22.47586006183743
+        },
+        {
+          "Estado": "Paraná",
+          "total": 1270.0,
+          "taxa": 10.68078032267226
+        },
+        {
+          "Estado": "Pernambuco",
+          "total": 2970.0,
+          "taxa": 31.060424866871568
+        },
+        {
+          "Estado": "Piauí",
+          "total": 526.0,
+          "taxa": 15.541223094257518
+        },
+        {
+          "Estado": "Rio de Janeiro",
+          "total": 2949.0,
+          "taxa": 17.121908745045374
+        },
+        {
+          "Estado": "Rio Grande do Norte",
+          "total": 843.0,
+          "taxa": 24.39775459621282
+        },
+        {
+          "Estado": "Rio Grande do Sul",
+          "total": 1117.0,
+          "taxa": 9.943682436706057
+        },
+        {
+          "Estado": "Rondônia",
+          "total": 439.0,
+          "taxa": 25.05779274522675
+        },
+        {
+          "Estado": "Roraima",
+          "total": 128.0,
+          "taxa": 17.32604917349331
+        },
+        {
+          "Estado": "Santa Catarina",
+          "total": 479.0,
+          "taxa": 5.850718252005703
+        },
+        {
+          "Estado": "São Paulo",
+          "total": 2527.0,
+          "taxa": 5.483726645145662
+        },
+        {
+          "Estado": "Sergipe",
+          "total": 303.0,
+          "taxa": 13.17720734531459
+        },
+        {
+          "Estado": "Tocantins",
+          "total": 269.0,
+          "taxa": 16.951726649941804
+        }
+      ],
+      "unidade": "por 100 mil habitantes",
+      "tabela": "T03",
+      "ano": 2025
+    },
+    "roubo_veiculos": {
+      "dados": [
+        {
+          "Estado": "Brasil",
+          "total": 104491.0,
+          "taxa": 80.9366445102173
+        },
+        {
+          "Estado": "Acre",
+          "total": 473.0,
+          "taxa": 122.04656347324394
+        },
+        {
+          "Estado": "Alagoas",
+          "total": 1269.0,
+          "taxa": 102.16494687664287
+        },
+        {
+          "Estado": "Amapá",
+          "total": 87.0,
+          "taxa": 30.915306274741127
+        },
+        {
+          "Estado": "Amazonas",
+          "total": 587.0,
+          "taxa": 45.864857283722195
+        },
+        {
+          "Estado": "Bahia",
+          "total": 9479.0,
+          "taxa": 165.94611959359918
+        },
+        {
+          "Estado": "Ceará",
+          "total": 5140.0,
+          "taxa": 125.50283541182144
+        },
+        {
+          "Estado": "Distrito Federal",
+          "total": 861.0,
+          "taxa": 38.453327664333266
+        },
+        {
+          "Estado": "Espírito Santo",
+          "total": 1419.0,
+          "taxa": 53.31834357679288
+        },
+        {
+          "Estado": "Goiás",
+          "total": 507.0,
+          "taxa": 9.863891910421854
+        },
+        {
+          "Estado": "Maranhão",
+          "total": 3338.0,
+          "taxa": 139.54289459954782
+        },
+        {
+          "Estado": "Mato Grosso",
+          "total": 524.0,
+          "taxa": 17.66330041464935
+        },
+        {
+          "Estado": "Mato Grosso do Sul",
+          "total": 283.0,
+          "taxa": 13.903757502747588
+        },
+        {
+          "Estado": "Minas Gerais",
+          "total": 3549.0,
+          "taxa": 24.485931697290408
+        },
+        {
+          "Estado": "Pará",
+          "total": 1192.0,
+          "taxa": 39.362018294092394
+        },
+        {
+          "Estado": "Paraíba",
+          "total": 4392.0,
+          "taxa": 244.9584680502656
+        },
+        {
+          "Estado": "Paraná",
+          "total": 1599.0,
+          "taxa": 16.590267395891402
+        },
+        {
+          "Estado": "Pernambuco",
+          "total": 11749.0,
+          "taxa": 299.3413166177106
+        },
+        {
+          "Estado": "Piauí",
+          "total": 2843.0,
+          "taxa": 175.15735204964292
+        },
+        {
+          "Estado": "Rio de Janeiro",
+          "total": 25235.0,
+          "taxa": 305.2577640833485
+        },
+        {
+          "Estado": "Rio Grande do Norte",
+          "total": 1391.0,
+          "taxa": 80.8608101195182
+        },
+        {
+          "Estado": "Rio Grande do Sul",
+          "total": 1790.0,
+          "taxa": 20.99176841224362
+        },
+        {
+          "Estado": "Rondônia",
+          "total": 368.0,
+          "taxa": 28.407884731919886
+        },
+        {
+          "Estado": "Roraima",
+          "total": 139.0,
+          "taxa": 45.56704748479733
+        },
+        {
+          "Estado": "Santa Catarina",
+          "total": 664.0,
+          "taxa": 9.937038980878832
+        },
+        {
+          "Estado": "São Paulo",
+          "total": 25024.0,
+          "taxa": 70.83393283927533
+        },
+        {
+          "Estado": "Sergipe",
+          "total": 355.0,
+          "taxa": 33.1906602417028
+        },
+        {
+          "Estado": "Tocantins",
+          "total": 234.0,
+          "taxa": 24.03419017617883
+        }
+      ],
+      "unidade": "por 100 mil veículos",
+      "tabela": "T11",
+      "ano": 2025
+    },
+    "roubo_carga": {
+      "dados": [
+        {
+          "Estado": "Brasil",
+          "total": 7905.0,
+          "taxa": 3.703946017280386
+        },
+        {
+          "Estado": "Acre",
+          "total": 1.0,
+          "taxa": 0.11307458852157237
+        },
+        {
+          "Estado": "Alagoas",
+          "total": 9.0,
+          "taxa": 0.2794295166987079
+        },
+        {
+          "Estado": "Amapá",
+          "total": null,
+          "taxa": null
+        },
+        {
+          "Estado": "Amazonas",
+          "total": 21.0,
+          "taxa": 0.4859293375441039
+        },
+        {
+          "Estado": "Bahia",
+          "total": 209.0,
+          "taxa": 1.405428734104786
+        },
+        {
+          "Estado": "Ceará",
+          "total": 70.0,
+          "taxa": 0.7552188861686624
+        },
+        {
+          "Estado": "Distrito Federal",
+          "total": 5.0,
+          "taxa": 0.16683912270650428
+        },
+        {
+          "Estado": "Espírito Santo",
+          "total": 22.0,
+          "taxa": 0.533093731932363
+        },
+        {
+          "Estado": "Goiás",
+          "total": 12.0,
+          "taxa": 0.16164600898024403
+        },
+        {
+          "Estado": "Maranhão",
+          "total": 139.0,
+          "taxa": 1.9805617129493542
+        },
+        {
+          "Estado": "Mato Grosso",
+          "total": 50.0,
+          "taxa": 1.2841391606198693
+        },
+        {
+          "Estado": "Mato Grosso do Sul",
+          "total": null,
+          "taxa": null
+        },
+        {
+          "Estado": "Minas Gerais",
+          "total": 132.0,
+          "taxa": 0.6170115410606456
+        },
+        {
+          "Estado": "Pará",
+          "total": 128.0,
+          "taxa": 1.469373436207841
+        },
+        {
+          "Estado": "Paraíba",
+          "total": 8.0,
+          "taxa": 0.19210136804989256
+        },
+        {
+          "Estado": "Paraná",
+          "total": 143.0,
+          "taxa": 1.202639044206404
+        },
+        {
+          "Estado": "Pernambuco",
+          "total": 286.0,
+          "taxa": 2.9910038760691138
+        },
+        {
+          "Estado": "Piauí",
+          "total": 20.0,
+          "taxa": 0.5909210301999056
+        },
+        {
+          "Estado": "Rio de Janeiro",
+          "total": 3113.0,
+          "taxa": 18.074093565047896
+        },
+        {
+          "Estado": "Rio Grande do Norte",
+          "total": 13.0,
+          "taxa": 0.37624058096176355
+        },
+        {
+          "Estado": "Rio Grande do Sul",
+          "total": 42.0,
+          "taxa": 0.3738895813264588
+        },
+        {
+          "Estado": "Rondônia",
+          "total": null,
+          "taxa": null
+        },
+        {
+          "Estado": "Roraima",
+          "total": 3.0,
+          "taxa": 0.40607927750374945
+        },
+        {
+          "Estado": "Santa Catarina",
+          "total": 9.0,
+          "taxa": 0.10992998803351009
+        },
+        {
+          "Estado": "São Paulo",
+          "total": 3470.0,
+          "taxa": 7.530087636982764
+        },
+        {
+          "Estado": "Sergipe",
+          "total": null,
+          "taxa": null
+        },
+        {
+          "Estado": "Tocantins",
+          "total": null,
+          "taxa": null
+        }
+      ],
+      "unidade": "por 100 mil habitantes",
+      "tabela": "T15",
+      "ano": 2025
+    },
+    "feminicidios": {
+      "dados": [
+        {
+          "Estado": "Brasil",
+          "total": 1571.0,
+          "taxa": 1.436350565831151
+        },
+        {
+          "Estado": "Acre",
+          "total": 14.0,
+          "taxa": 3.1768939961241895
+        },
+        {
+          "Estado": "Alagoas",
+          "total": 30.0,
+          "taxa": 1.7981773674203827
+        },
+        {
+          "Estado": "Amapá",
+          "total": 9.0,
+          "taxa": 2.231711127311681
+        },
+        {
+          "Estado": "Amazonas",
+          "total": 20.0,
+          "taxa": 0.9305169067943088
+        },
+        {
+          "Estado": "Bahia",
+          "total": 102.0,
+          "taxa": 1.333963173200209
+        },
+        {
+          "Estado": "Ceará",
+          "total": 47.0,
+          "taxa": 0.9857973863365127
+        },
+        {
+          "Estado": "Distrito Federal",
+          "total": 29.0,
+          "taxa": 1.8519476422471406
+        },
+        {
+          "Estado": "Espírito Santo",
+          "total": 35.0,
+          "taxa": 1.6615664488906907
+        },
+        {
+          "Estado": "Goiás",
+          "total": 59.0,
+          "taxa": 1.5691656294215894
+        },
+        {
+          "Estado": "Maranhão",
+          "total": 51.0,
+          "taxa": 1.4329582073524243
+        },
+        {
+          "Estado": "Mato Grosso",
+          "total": 53.0,
+          "taxa": 2.7400716347784364
+        },
+        {
+          "Estado": "Mato Grosso do Sul",
+          "total": 39.0,
+          "taxa": 2.641760957211601
+        },
+        {
+          "Estado": "Minas Gerais",
+          "total": 177.0,
+          "taxa": 1.6231326294684405
+        },
+        {
+          "Estado": "Pará",
+          "total": 65.0,
+          "taxa": 1.4984848013297323
+        },
+        {
+          "Estado": "Paraíba",
+          "total": 36.0,
+          "taxa": 1.6756757511565654
+        },
+        {
+          "Estado": "Paraná",
+          "total": 87.0,
+          "taxa": 1.430211357291949
+        },
+        {
+          "Estado": "Pernambuco",
+          "total": 88.0,
+          "taxa": 1.7710791628108797
+        },
+        {
+          "Estado": "Piauí",
+          "total": 37.0,
+          "taxa": 2.1394876563127028
+        },
+        {
+          "Estado": "Rio de Janeiro",
+          "total": 105.0,
+          "taxa": 1.1617264893112311
+        },
+        {
+          "Estado": "Rio Grande do Norte",
+          "total": 19.0,
+          "taxa": 1.0716445118264433
+        },
+        {
+          "Estado": "Rio Grande do Sul",
+          "total": 80.0,
+          "taxa": 1.3837701405581817
+        },
+        {
+          "Estado": "Rondônia",
+          "total": 25.0,
+          "taxa": 2.868413262625034
+        },
+        {
+          "Estado": "Roraima",
+          "total": 6.0,
+          "taxa": 1.650500927031354
+        },
+        {
+          "Estado": "Santa Catarina",
+          "total": 53.0,
+          "taxa": 1.2810667757265402
+        },
+        {
+          "Estado": "São Paulo",
+          "total": 270.0,
+          "taxa": 1.135519929762625
+        },
+        {
+          "Estado": "Sergipe",
+          "total": 15.0,
+          "taxa": 1.2569930714541901
+        },
+        {
+          "Estado": "Tocantins",
+          "total": 20.0,
+          "taxa": 2.535342676916212
+        }
+      ],
+      "unidade": "por 100 mil mulheres",
+      "tabela": "T21",
+      "ano": 2025
+    }
+  },
+  "notas": [
+    {
+      "tabela": "T01",
+      "nota": "(1) A categoria Mortes Violentas Intencionais (MVI) corresponde à soma das vítimas de homicídio doloso, latrocínio, lesão corporal seguida de morte e mortes decorrentes de intervenções policiais em serviço e fora (em alguns casos, contabilizadas dentro dos homicídios dolosos, conforme notas explicativas). Sendo assim, a categoria MVI representa o total de vítimas de mortes violentas com intencionalidade definida de determinado território. O número de policiais mortos já está contido no total de homicídios dolosos e é aqui apresentado apenas para mensuração do fenômeno."
+    },
+    {
+      "tabela": "T01",
+      "nota": "(2) Taxa por 100 mil habitantes."
+    },
+    {
+      "tabela": "T01",
+      "nota": "(3) Atualização das informações publicadas no Anuário Brasileiro de Segurança Pública, ano 19, 2025."
+    },
+    {
+      "tabela": "T01",
+      "nota": "(4) A categoria homicídio doloso inclui as mortes decorrentes de intervenções policiais."
+    },
+    {
+      "tabela": "T01",
+      "nota": "(5) O estado de São Paulo publica somente os dados de ocorrências de lesão corporal seguida de morte em ambos os anos. Para o dado referente ao número de vítimas de lesão corporal seguida de morte, foi considerado o dado de ocorrências deste crime."
+    },
+    {
+      "tabela": "T03",
+      "nota": "(1) Incluindo feminicídios."
+    },
+    {
+      "tabela": "T03",
+      "nota": "(2) Por 100 mil habitantes."
+    },
+    {
+      "tabela": "T03",
+      "nota": "(3) Atualização das informações publicadas no Anuário Brasileiro de Segurança Pública, ano 19, 2025."
+    },
+    {
+      "tabela": "T03",
+      "nota": "(4) Os números de vítimas e ocorrências de homicidio doloso incluem seis casos ocorridos em unidade prisional em 2024 e dois casos em 2025."
+    },
+    {
+      "tabela": "T03",
+      "nota": "(5) Estão disponíveis somente os dados de vítimas em ambos os anos. Para o dado referente ao número de ocorrências de homicídio doloso, foi considerado o número de vítimas deste crime."
+    },
+    {
+      "tabela": "T03",
+      "nota": "(6) A categoria homicídio doloso inclui as mortes decorrentes de intervenções policiais."
+    },
+    {
+      "tabela": "T11",
+      "nota": "(1) Os dados informados correspondem ao volume de ocorrências policiais registradas."
+    },
+    {
+      "tabela": "T11",
+      "nota": "(2) Taxa por 100 mil veículos, calculada a partir da frota de veículos informada pela Secretaria Nacional de Trânsito (Senatran) em dezembro/2024 e dezembro/2025."
+    },
+    {
+      "tabela": "T11",
+      "nota": "(3) Atualização das informações publicadas no Anuário Brasileiro de Segurança Pública, ano 19, 2025."
+    },
+    {
+      "tabela": "T15",
+      "nota": "(1) Dependendo do objeto roubado, este pode ser contabilizado em mais de uma categoria de roubo, de modo que o número de registros de roubo total pode apresentar um valor inferior à soma das outras categorias de roubo constantes nesta e nas demais tabelas de roubo desta publicação. Em alguns casos, pode apresentar um valor maior do que a somatória dos casos apresentados nesta seção, e isso acontece porque a UF contabiliza outras modalidades de roubo não apresentadas no Anuário. Nesse sentido, o valor total de Roubo trata de todos os registros de roubo da UF, dentro do art. 157 do CP."
+    },
+    {
+      "tabela": "T15",
+      "nota": "(2) Considera-se como instituições financeiras bancos, caixas eletrônicos e empresas de transporte de valores."
+    },
+    {
+      "tabela": "T15",
+      "nota": "(3) Taxa por 100 instituições financeiras, calculadas a partir da quantidade de instituições financeiras informada pelo Banco Central do Brasil em dezembro/2024 e dezembro/2025."
+    },
+    {
+      "tabela": "T15",
+      "nota": "(4) Taxas por 100 mil habitantes."
+    },
+    {
+      "tabela": "T15",
+      "nota": "(5) Atualização das informações publicadas no Anuário Brasileiro de Segurança Pública, ano 19, 2025."
+    },
+    {
+      "tabela": "T15",
+      "nota": "(6) O dado de roubo a instituição financeira do estado do Rio de Janeiro inclui \"Roubo a banco\" e \"Roubo a caixa eletrônico\"."
+    },
+    {
+      "tabela": "T21",
+      "nota": "(1) A Lei nº 13.104, de 9 de março de 2015, tipificou o feminicídio como uma qualificadora do homicídio, quando o crime é cometido contra a mulher por razões da condição de sexo feminino. Considera-se que essas razões estão presentes nos casos de violência doméstica e familiar ou de menosprezo ou discriminação à condição de mulher. Em 2024, a Lei nº 14.994, de 9 de outubro, atualizou a figura do feminicídio, transformando-o em crime autônomo. Neste relatório, seguimos incluindo os feminicídios no total de homicídios dolosos para preservar a comparabilidade histórica e permitir a continuidade da extração da proporção de feminicídios entre os homicídios de mulheres."
+    },
+    {
+      "tabela": "T21",
+      "nota": "(2) Taxa por 100 mil mulheres. "
+    },
+    {
+      "tabela": "T21",
+      "nota": "(3) Atualização das informações publicadas no Anuário Brasileiro de Segurança Pública, ano 19, 2025."
+    }
+  ],
+  "ano": 2025,
+  "edicao": 2026,
+  "verificado_em": "2026-10-27",
+  "fonte": "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.xlsx"
+}
