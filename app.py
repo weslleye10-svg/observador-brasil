@@ -14,6 +14,8 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from monetario import exibir_divida_reais, exibir_monetario, converter_divida_milhoes
 from dossie import carregar_casos, exibir_dossie
+from orcamento import exibir_orcamento
+from seguranca import consulta_seguranca, metrica_nacional, exibir_seguranca
 
 ROOT = Path(__file__).parent
 TZ = ZoneInfo('America/Sao_Paulo')
@@ -46,9 +48,11 @@ st.caption('Economia e estados • valores exatos, fontes e datas em cada consul
 with st.sidebar:
     st.header('Consulta')
     anos = st.slider('Histórico econômico (anos)', 1, 9, 3)
-    automatico = st.toggle('Atualizar a cada 5 minutos', True)
+    automatico = st.toggle('Atualizar macroeconomia a cada 5 minutos', True)
     if st.button('Atualizar dados agora', type='primary'):
         st.session_state.pop('consulta', None)
+        for chave in ['financas_cache','seguranca_consulta','dossie_noticias']:
+            st.session_state.pop(chave,None)
     st.caption('Cada nova sessão consulta as APIs. Os valores publicados pelas fontes têm periodicidades diferentes.')
 
 
@@ -155,6 +159,7 @@ def tabela_economica(df, codigo):
 
 def exibir_economia(resultados, hora):
     st.header('Economia')
+    metrica_nacional()
     st.caption(f'Última consulta: {hora:%d/%m/%Y às %H:%M} • horário de Brasília')
     cols = st.columns(2)
     for i,(nome,(codigo, unidade, explicacao, limite)) in enumerate(CONFIG.items()):
@@ -216,6 +221,11 @@ def exibir_economia(resultados, hora):
 
 def montar_estados(resultados):
     dados = UF_BASE.copy()
+    seguranca = consulta_seguranca()
+    mvi = {r["Estado"]:r for r in seguranca["indicadores"]["mvi"]["dados"]}
+    dados["Violência (por 100 mil)"] = dados.Estado.map(lambda e:mvi[e]["taxa"])
+    dados["mvi_total"] = dados.Estado.map(lambda e:mvi[e]["total"])
+    dados["violencia_ref"] = str(seguranca["ano"])
     avisos = []
     for chave,coluna,ref in [('populacao','População','pop_ref'),('pobreza','Pobreza (%)','pobreza_ref'),('educacao','Analfabetismo (%)','educacao_ref')]:
         if chave in resultados:
@@ -229,10 +239,16 @@ def montar_estados(resultados):
 
 def exibir_estados(resultados):
     st.header('Brasil por estado')
+    with st.expander('Homicídios, feminicídios e roubos — Brasil, regiões e estados'):
+        exibir_seguranca()
     st.write('Escolha um estado para ver os dados completos. A tabela continua disponível mesmo sem o mapa.')
     dados, avisos = montar_estados(resultados)
     if avisos:
         st.info('IBGE indisponível para '+', '.join(avisos)+f'. Exibindo a base verificada em {BASE["verificado_em"]}, com o ano de cada indicador abaixo. Não é uma consulta ao vivo desses campos.')
+    st.subheader('Cinco maiores valores por indicador')
+    ranking = st.selectbox('Ranking estadual', ['Violência (por 100 mil)', 'Pobreza (%)', 'Analfabetismo (%)'],key='ranking_estadual')
+    rref=INDICADORES[ranking][0]
+    st.table(dados.nlargest(5,ranking)[['Estado',ranking,rref]].rename(columns={rref:'Referência'}).set_index('Estado'))
     estado = st.selectbox('Estado', sorted(dados.Estado), key='estado_escolhido')
     row = dados[dados.Estado == estado].iloc[0]
     detalhes = []
@@ -285,7 +301,7 @@ def exibir_estados(resultados):
                     mode='lines',fill='toself',fillcolor=cor,legendgroup=registro['UF'],
                     line=dict(color='#38bdf8' if registro['Estado']==estado else '#64748b',
                               width=2 if registro['Estado']==estado else .7),
-                    text=f"<b>{registro['Estado']}</b><br>{registro['leitura']}",
+                    text=f"<b>{registro['Estado']}</b><br>{registro['leitura']}<br>População: {br(registro['População'],0)} ({registro['pop_ref']})<br>Pobreza: {br(registro['Pobreza (%)'])}% ({registro['pobreza_ref']})<br>Analfabetismo: {br(registro['Analfabetismo (%)'])}% ({registro['educacao_ref']})<br>MVI: {br(registro['Violência (por 100 mil)'])}/100 mil ({registro['violencia_ref']})<br>Governador registrado: {registro['Governador registrado']} · {registro['Partido na fonte']}",
                     hoverinfo='text',hoveron='fills',showlegend=False))
         fig.update_layout(height=440,margin=dict(l=5,r=5,t=5,b=5),dragmode=False,
             paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)',
@@ -339,10 +355,14 @@ def painel():
 
 
 # Duas áreas principais; a visão geral mantém Economia, Estados e Agenda.
-tab1, tab2 = st.tabs(["Visão Geral e Macroeconomia", "Dossiê de Corrupção"])
-with tab2:
-    # Dicionário histórico documentado; busca web implementada em dossie.buscar_noticias.
-    casos_historicos = carregar_casos()
-    exibir_dossie(casos_historicos)
-with tab1:
-    painel()
+tab1, tab2, tab3 = st.tabs(["Visão Geral e Macroeconomia", "Dossiê de Corrupção", "Economia, Orçamento e Benefícios Sociais"],on_change='rerun',key='secao_principal')
+if tab1.open:
+    with tab1:
+        painel()
+if tab2.open:
+    with tab2:
+        casos_historicos = carregar_casos()
+        exibir_dossie(casos_historicos)
+if tab3.open:
+    with tab3:
+        exibir_orcamento()
