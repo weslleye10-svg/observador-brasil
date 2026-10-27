@@ -215,7 +215,12 @@
         "tipo": "Primária"
       }
     ],
-    "verificado_em": "2026-10-26"
+    "verificado_em": "2026-10-26",
+    "correcao": {
+      "valor": 2815.35,
+      "base": "2008-04",
+      "nota": "Mês do relato da devolução, não data individual de cada despesa."
+    }
   },
   "lava-jato": {
     "nome": "Lava Jato / Petrolão",
@@ -327,7 +332,12 @@
         "tipo": "Primária"
       }
     ],
-    "verificado_em": "2026-10-26"
+    "verificado_em": "2026-10-26",
+    "correcao": {
+      "valor": 6194000000,
+      "base": "2014-12",
+      "nota": "Fechamento contábil de 2014 da Petrobras; baixa contábil, não condenação nacional por esse valor."
+    }
   },
   "pasadena": {
     "nome": "Refinaria de Pasadena",
@@ -502,6 +512,138 @@
         "tipo": "Primária"
       }
     ],
-    "verificado_em": "2026-10-26"
+    "verificado_em": "2026-10-26",
+    "correcao": {
+      "valor": 22000000000,
+      "base": "2026-03",
+      "nota": "Mês do anúncio do teto de bloqueio da terceira fase. É teto de cautelar, não dano apurado."
+    }
+  },
+  "aloprados": {
+    "nome": "Dossiê dos Aloprados",
+    "periodo": "Eleições de 2006; registro judicial de 2007",
+    "consulta": "dossiê dos aloprados",
+    "aliases": [
+      "dossiê Vedoin",
+      "Gedimar Passos",
+      "Valdebran Padilha",
+      "Aloizio Mercadante",
+      "Hamilton Lacerda"
+    ],
+    "esquema": "Tentativa de aquisição de documentos e informações que supostamente relacionariam adversários do PSDB a fraudes de ambulâncias. A investigação examinou dinheiro apreendido e suspeitas eleitorais e de lavagem; a vinculação de cada pessoa depende de prova individual.",
+    "impacto": {
+      "rotulo": "Dinheiro relatado na apreensão — duas moedas",
+      "valor": "R$ 1,16 mi + US$ 248,8 mil",
+      "data": "2006",
+      "nota": "Montantes descritos em registro dos Anais do Senado. Não representam prejuízo público comprovado nem são somados sem câmbio documentado; falas parlamentares são registros de alegações, não sentença."
+    },
+    "efeito": "O episódio afetou o debate eleitoral. Não há nesta ficha valor consolidado de dano ao erário nem demonstração de que o dinheiro apreendido tenha origem pública.",
+    "status_tipo": "Arquivamento individual documentado; demais desfechos não certificados",
+    "status": "Em 11/04/2007, o STF registrou o arquivamento em relação ao senador Aloizio Mercadante e HC de ofício para José Giácomo Baccarin. A mesma notícia registra discussão distinta sobre indiciamento. Não estendemos esse resultado a todos os envolvidos nem afirmamos custódia ou processo ativo hoje sem documento recente.",
+    "status_data": "2007-04-11",
+    "verificado_em": "2026-10-27",
+    "pessoas": [
+      {
+        "Nome": "Aloizio Mercadante",
+        "Papel documentado": "Senador à época; citado na investigação",
+        "Situação no registro": "Arquivamento em seu favor registrado pelo STF em 11/04/2007.",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/stf-arquiva-inquerito-de-mercadante-sobre-venda-de-dossie-na-fraude-das-ambulancias/"
+      },
+      {
+        "Nome": "José Giácomo Baccarin",
+        "Papel documentado": "Citado na apuração eleitoral",
+        "Situação no registro": "HC de ofício registrado pelo STF; não atribuir condenação.",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/stf-arquiva-inquerito-de-mercadante-sobre-venda-de-dossie-na-fraude-das-ambulancias/"
+      },
+      {
+        "Nome": "Gedimar Passos e Valdebran Padilha",
+        "Papel documentado": "Citados na negociação e na apuração do dinheiro",
+        "Situação no registro": "Indiciamentos históricos relatados; a fonte consultada não certifica desfecho penal atual.",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/stf-arquiva-inquerito-de-mercadante-sobre-venda-de-dossie-na-fraude-das-ambulancias/"
+      },
+      {
+        "Nome": "Hamilton Lacerda",
+        "Papel documentado": "Citado no relatório descrito pelo STF",
+        "Situação no registro": "Indiciamento histórico; não equivale a condenação.",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/stf-arquiva-inquerito-de-mercadante-sobre-venda-de-dossie-na-fraude-das-ambulancias/"
+      }
+    ],
+    "autoridades": [
+      {
+        "Nome": "Sepúlveda Pertence",
+        "Papel documentado": "Relator da Petição 3825",
+        "Situação no registro": "Atuação judicial, não pessoa investigada nesta ficha.",
+        "Fonte": "https://noticias.stf.jus.br/postsnoticias/stf-arquiva-inquerito-de-mercadante-sobre-venda-de-dossie-na-fraude-das-ambulancias/"
+      }
+    ],
+    "constitucional": "CF/88, arts. 5º, LIV, LV e LVII (processo e presunção de inocência), 14 (eleições) e 102 (competência do STF).",
+    "argumento": "Investigar origem e destinação de recursos e eventual falsidade eleitoral protege a integridade das eleições, desde que presentes elementos concretos e autoridade competente.",
+    "limite": "Benefício político presumido ou vínculo partidário não provam participação criminal. Arquivamento individual e alegações parlamentares têm alcances distintos.",
+    "precedente": "Petição 3825, STF, registro de 11/04/2007: arquivamento quanto a Mercadante; debate sobre indiciamento não deve ser apresentado como condenação ou resultado geral do caso.",
+    "fontes": [
+      {
+        "titulo": "STF — arquivamento individual e relatório",
+        "url": "https://noticias.stf.jus.br/postsnoticias/stf-arquiva-inquerito-de-mercadante-sobre-venda-de-dossie-na-fraude-das-ambulancias/",
+        "data": "11/04/2007",
+        "tipo": "Fonte judicial primária"
+      },
+      {
+        "titulo": "Anais do Senado — registros de novembro de 2006",
+        "url": "https://www.senado.leg.br/publicacoes/anais/pdf-digitalizado/Anais_Republica/2006/2006%20Livro%2055.pdf",
+        "data": "11/2006",
+        "tipo": "Registro parlamentar; não decisão judicial"
+      }
+    ]
+  },
+  "emendas-make-up": {
+    "nome": "Emendas e contratos — Operação Make Up",
+    "periodo": "Investigações documentadas em setembro de 2026",
+    "consulta": "Operação Make Up",
+    "aliases": [
+      "emendas parlamentares",
+      "contratos",
+      "termo de fomento",
+      "organização da sociedade civil",
+      "CGU"
+    ],
+    "esquema": "Segundo a PF, a operação apura suposto desvio de emendas transferidas por termo de fomento a uma organização da sociedade civil, com subcontratações irregulares e serviços sem comprovação. São alegações sob investigação, não fraude definitivamente julgada.",
+    "impacto": {
+      "rotulo": "Dano definitivo quantificado na fonte",
+      "valor": "Não consolidado",
+      "data": "10/09/2026",
+      "nota": "A PF menciona movimentação de centenas de milhões entre empresas. Movimentação financeira não é sinônimo de dinheiro desviado; não a exibimos como rombo."
+    },
+    "efeito": "A investigação envolve rastreabilidade de emendas, comprovação de serviços e controle de recursos federais. Ocorrer durante uma gestão não demonstra participação do presidente ou de partido.",
+    "status_tipo": "Investigação no registro oficial consultado",
+    "status": "A PF anunciou 49 mandados de busca e apreensão expedidos pelo STF em 10/09/2026, com apoio da CGU. A nota não nomeia os investigados nem informa condenação. Desfechos posteriores não são presumidos e devem ser conferidos nos autos.",
+    "status_data": "2026-09-10",
+    "verificado_em": "2026-10-27",
+    "pessoas": [],
+    "autoridades": [
+      {
+        "Nome": "Polícia Federal e Controladoria-Geral da União",
+        "Papel documentado": "Investigação e apoio ao controle",
+        "Situação no registro": "Órgãos de apuração, não envolvidos como acusados.",
+        "Fonte": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/09/pf-apura-desvio-de-recursos-publicos-oriundos-de-emendas-parlamentares"
+      }
+    ],
+    "constitucional": "CF/88, arts. 37 (legalidade e impessoalidade), 70–74 (fiscalização), 166 (emendas) e 5º, LIV, LV e LVII (garantias).",
+    "argumento": "Rastrear transferências e comprovar entregas permite controle sobre emendas e termos de fomento; suspeitas concretas podem justificar diligências autorizadas judicialmente.",
+    "limite": "Busca e apreensão não condena. Movimentação entre empresas não é dano consolidado. Responsabilidade pessoal e competência dependem do processo.",
+    "precedente": "ADPF 854: o STF tratou da transparência e rastreabilidade de emendas. É referência institucional sobre controle orçamentário, não julgamento penal desta operação.",
+    "fontes": [
+      {
+        "titulo": "PF — operação, escopo e mandados",
+        "url": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/09/pf-apura-desvio-de-recursos-publicos-oriundos-de-emendas-parlamentares",
+        "data": "10/09/2026",
+        "tipo": "Nota oficial de investigação"
+      },
+      {
+        "titulo": "CGU — cumprimento das decisões na ADPF 854",
+        "url": "https://portaldatransparencia.gov.br/emendas/adpf854",
+        "data": "Consulta processual",
+        "tipo": "Fonte judicial; alcance distinto da apuração penal"
+      }
+    ]
   }
 }
