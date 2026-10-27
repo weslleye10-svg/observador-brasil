@@ -143,14 +143,48 @@ def exibir_pessoas(pessoas):
         st.caption('Nenhum nome adicional é atribuído sem fonte nesta ficha.')
 
 
-def exibir_noticias(termo):
+def corrigir_ipca(valor,base,fim,serie):
+    """Corrige do fim do mês base ao fim do mês final; exige todos os meses."""
+    import pandas as pd
+    import math
+    b=pd.Period(base,freq='M');f=pd.Period(fim,freq='M')
+    if f<b or not math.isfinite(float(valor)) or valor<0:raise ValueError('Período ou valor inválido')
+    esperados=pd.period_range(b+1,f,freq='M')
+    por_mes=serie.copy();por_mes['mes']=pd.to_datetime(por_mes.data).dt.to_period('M')
+    janela=por_mes[por_mes.mes.isin(esperados)]
+    if len(janela)!=len(esperados) or janela.mes.duplicated().any():raise ValueError('IPCA sem todos os meses do intervalo')
+    if not all(math.isfinite(float(x)) and float(x)>-100 for x in janela.valor):raise ValueError('Taxas inválidas')
+    return float(valor)*float((1+janela.valor/100).prod())
+
+
+def exibir_correcao(c):
+    with st.expander('Valor nominal e equivalência pelo IPCA'):
+        st.caption('Simulação de poder de compra; não é cálculo de ressarcimento judicial. Não inclui juros, câmbio ou multa. Bloqueios e baixas contábeis conservam sua natureza após a correção.')
+        referencia=c.get('correcao')
+        if not referencia:
+            st.info('Esta ficha não tem valor em reais com mês-base suficientemente definido para correção automática. Valores em dólares não são convertidos sem metodologia cambial.')
+            return
+        st.write('Base utilizada: **'+referencia['base']+'** · '+referencia['nota'])
+        if st.button('Consultar IPCA e calcular equivalência',key='corrigir_'+c['nome']):
+            try:
+                from orcamento import sgs,reais
+                import pandas as pd
+                serie=sgs(433);fim=serie.iloc[-1].data.strftime('%Y-%m')
+                valor=corrigir_ipca(referencia['valor'],referencia['base'],fim,serie)
+                st.metric('Valor nominal em reais',reais(referencia['valor']))
+                st.metric('Equivalente ao fim de '+fim,reais(valor))
+                st.caption('Produto dos fatores mensais do IPCA, a partir do mês seguinte à base. SGS 433/IBGE; consulta '+datetime.now(TZ).strftime('%d/%m/%Y %H:%M')+'.')
+            except (requests.RequestException,ValueError,KeyError,IndexError) as e:st.warning('Não foi possível calcular com o intervalo completo: '+str(e)[:150])
+
+
+def exibir_noticias(termo,prefixo='dossie'):
     st.subheader('Últimas Notícias e Atualizações')
-    janela=st.radio('Período das notícias',['Últimas 24 horas','Últimos 7 dias'],index=1,horizontal=True,key='janela_dossie')
+    janela=st.radio('Período das notícias',['Últimas 24 horas','Últimos 7 dias'],index=1,horizontal=True,key='janela_'+prefixo)
     horas=24 if janela=='Últimas 24 horas' else 168
     st.caption('Busca por: '+termo+'. Manchetes são cobertura de mídia; decisões devem ser confirmadas na fonte oficial.')
     chave=(termo,horas)
     cache=st.session_state.setdefault('dossie_noticias',{})
-    refazer=st.button('Atualizar notícias agora',key='atualizar_noticias_dossie')
+    refazer=st.button('Atualizar notícias agora',key='atualizar_noticias_'+prefixo)
     salvo=cache.get(chave)
     agora=datetime.now(UTC)
     if refazer or salvo is None or (agora-salvo['hora']).total_seconds()>=300:
@@ -191,7 +225,7 @@ def exibir_dossie(casos):
         return
     st.caption(f'{len(encontrados)} caso(s) encontrado(s). A pesquisa também encontra autoridades de controle; ser citado não indica culpa.')
     # O caso mais recente abre inicialmente, mantendo os demais disponíveis.
-    ordem=['banco-master','mensalao','sanguessugas','cartoes','lava-jato','pasadena']
+    ordem=['banco-master','mensalao','sanguessugas','cartoes','lava-jato','pasadena','aloprados','emendas-make-up']
     opcoes=[k for k in ordem if k in encontrados]
     escolhido=st.selectbox('Selecione o caso',opcoes,format_func=lambda k:casos[k]['nome'],key='caso_dossie')
     c=casos[escolhido]
@@ -203,6 +237,7 @@ def exibir_dossie(casos):
     st.metric(c['impacto']['rotulo'],c['impacto']['valor'])
     st.caption(c['impacto']['data']+' · '+c['impacto']['nota'])
     st.write(c['efeito'])
+    exibir_correcao(c)
     st.subheader('Status Atual')
     st.write('**'+c['status_tipo']+'**')
     st.write(c['status'])
