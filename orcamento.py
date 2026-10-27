@@ -222,9 +222,27 @@ def exibir_orcamento():
         if atual:resumo.append({'Área':nome,**{k:atual[k] for k in ['inicial','autorizado','empenhado','liquidado','pago']}})
     if resumo:
         df=pd.DataFrame(resumo)
-        long=df.melt(id_vars='Área',value_vars=['inicial','autorizado','pago'],var_name='Estágio',value_name='Reais');long['R$ bilhões']=long.Reais/1e9
-        fig=px.bar(long,x='Área',y='R$ bilhões',color='Estágio',barmode='group',hover_data={'Reais':':,.2f','R$ bilhões':False})
-        fig.update_layout(legend=dict(orientation='h',y=1.16),margin=dict(l=10,r=10,t=70,b=10));st.plotly_chart(fig,width='stretch',config={'displayModeBar':False})
+        st.subheader('Orçamento previsto, autorizado e pago')
+        st.caption(f'União · exercício {ano} · colunas em R$ bilhões. Previsto = LOA inicial; autorizado = lei + créditos; pago = desembolso no exercício.')
+        long=df.melt(id_vars='Área',value_vars=['inicial','autorizado','pago'],var_name='Estágio',value_name='Reais')
+        long['Estágio']=long['Estágio'].map({'inicial':'Previsto','autorizado':'Autorizado','pago':'Pago'})
+        long['R$ bilhões']=long.Reais/1e9
+        long['Valor resumido']=long.Reais.map(lambda v:'R$ '+br(v/1e9)+' bilhões')
+        long['Valor exato']=long.Reais.map(lambda v:'R$ '+br(v))
+        fig=px.bar(long,x='Área',y='R$ bilhões',color='Estágio',barmode='group',
+            category_orders={'Estágio':['Previsto','Autorizado','Pago']},
+            color_discrete_map={'Previsto':'#87cefa','Autorizado':'#0070c9','Pago':'#ffaaaa'},
+            custom_data=['Área','Estágio','Valor resumido','Valor exato'])
+        fig.update_traces(hovertemplate='<b>%{customdata[0]} · %{customdata[1]}</b><br>%{customdata[2]}<br><br>Valor exato: %{customdata[3]}<extra></extra>')
+        fig.update_layout(separators=',.',hoverlabel=dict(font_size=14,align='left'),legend=dict(title_text='',orientation='h',y=1.16),margin=dict(l=10,r=10,t=70,b=10))
+        fig.update_xaxes(title=None,fixedrange=True)
+        fig.update_yaxes(title='R$ bilhões',rangemode='tozero',fixedrange=True)
+        st.plotly_chart(fig,width='stretch',config={'displayModeBar':False,'scrollZoom':False})
+        st.write('**Leitura rápida — valores em R$ bilhões**')
+        leitura=df[['Área','inicial','autorizado','pago']].rename(columns={'inicial':'Previsto','autorizado':'Autorizado','pago':'Pago'}).copy()
+        for coluna in ['Previsto','Autorizado','Pago']:leitura[coluna]=leitura[coluna].map(lambda v:br(v/1e9))
+        st.table(leitura.set_index('Área'))
+        st.caption('Exemplo de leitura: 251,84 significa R$ 251,84 bilhões. Passe o mouse ou toque numa coluna para ver também o valor completo em reais.')
         with st.expander('Valores exatos e download do orçamento'):
             st.dataframe(df,width='stretch',hide_index=True)
             st.download_button('Baixar orçamento em CSV',df.to_csv(index=False,sep=';',decimal=','),'orcamento.csv','text/csv')
