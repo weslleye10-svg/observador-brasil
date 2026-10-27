@@ -140,7 +140,7 @@ def card_orcamento(nome,atual,anterior,ano):
             st.warning('Recorte não disponível integralmente no SIOP. Não é gasto zero.')
             return
         delta=variacao(atual['inicial'],anterior['inicial'] if anterior else None)
-        st.metric(f'LOA inicial de {ano}',reais(atual['inicial']),None if delta is None else f'{delta:+.2f}% vs LOA inicial {ano-1}',delta_color='off')
+        st.metric(f'LOA inicial de {ano}',reais(atual['inicial']),None if delta is None else ('+' if delta>=0 else '')+br(delta)+f'% vs LOA inicial {ano-1}',delta_color='off')
         if delta is not None:
             st.badge('Expansão nominal da LOA' if delta>0 else 'Redução nominal da LOA' if delta<0 else 'LOA nominal estável',color='green' if delta>0 else 'orange' if delta<0 else 'gray')
         st.metric('Autorizado — lei + créditos',reais(atual['autorizado']))
@@ -149,8 +149,10 @@ def card_orcamento(nome,atual,anterior,ano):
             fracao=atual['pago']/atual['autorizado']
             st.progress(max(0.,min(1.,fracao)),text=br(fracao*100)+'% do autorizado pago')
         mudanca=variacao(atual['autorizado'],atual['inicial'])
-        if mudanca is not None:st.caption(f'Créditos/alterações sobre a LOA inicial: {mudanca:+.2f}%. Não mede contingenciamento.')
-        st.caption('Base SIOP atualizada em: '+atual['data'])
+        if mudanca is not None:st.caption('Créditos/alterações sobre a LOA inicial: '+('+' if mudanca>=0 else '')+br(mudanca)+'%. Não mede contingenciamento.')
+        try:data_fonte=datetime.fromisoformat(atual['data']).astimezone(TZ).strftime('%d/%m/%Y às %H:%M')
+        except ValueError:data_fonte=atual['data']
+        st.caption('Base SIOP atualizada em: '+data_fonte+' (Brasília)')
 
 @st.fragment(run_every='5m')
 def exibir_orcamento():
@@ -164,7 +166,9 @@ def exibir_orcamento():
     pacote=cache[ano];d=pacote['dados']
     st.caption(f'Consulta: {pacote["hora"]:%d/%m/%Y às %H:%M} (Brasília). Cada indicador tem sua própria referência.')
     st.subheader('Saúde, Educação e Segurança Pública')
-    st.info('LOA inicial é a previsão anual. Autorizado inclui alterações legais. Empenhado é compromisso; liquidado reconhece a entrega; pago é desembolso. A execução parcial do ano não é comparada ao total pago no ano anterior.')
+    st.caption('Compare quanto foi previsto, autorizado e pago. Os valores abaixo são da União.')
+    with st.expander('Como ler o orçamento e as comparações'):
+        st.write('LOA inicial é a previsão anual. Autorizado inclui alterações legais. Empenhado é compromisso; liquidado reconhece a entrega; pago é desembolso. A execução parcial do ano não é comparada ao total pago no ano anterior.')
     resumo=[]
     for nome,c in FUNCOES.items():
         atual=total_recorte(d.get('atual'),'funcao',[c]);anterior=total_recorte(d.get('anterior'),'funcao',[c])
@@ -205,15 +209,15 @@ def exibir_orcamento():
             r=hist.iloc[-1];ant=hist[hist.mes==f'{int(r.mes[:4])-1}{r.mes[4:]}'];a=ant.iloc[-1] if not ant.empty else None
             with st.container(border=True):
                 st.write('**Público e valor médio — mesma competência**')
-                st.metric('Quantidade de benefícios',br(r.quantidade,0),None if a is None else f'{variacao(r.quantidade,a.quantidade):+.2f}% em 12 meses',delta_color='off')
-                st.metric('Média por benefício',reais(r.medio),None if a is None else f'{variacao(r.medio,a.medio):+.2f}% nominal em 12 meses',delta_color='off')
+                st.metric('Quantidade de benefícios',br(r.quantidade,0),None if a is None else br(variacao(r.quantidade,a.quantidade))+'% em 12 meses',delta_color='off')
+                st.metric('Média por benefício',reais(r.medio),None if a is None else br(variacao(r.medio,a.medio))+'% nominal em 12 meses',delta_color='off')
                 st.caption('Referência: '+r.mes+' · '+p['unidade']+'. Média = valor da competência / benefícios da mesma competência. Fontes: Ipeadata/MDS/Portal da Transparência, valores monetários convertidos de R$ mil.')
                 st.write('Valor total da competência: **'+reais(r.valor_reais)+'**')
                 if a is not None and 'ipca' in d:
                     ipca=d['ipca'].copy();ipca['mes']=ipca.data.dt.strftime('%Y-%m');jan=ipca[(ipca.mes>a.mes)&(ipca.mes<=r.mes)]
                     if len(jan)==12 and jan.mes.nunique()==12:
                         fator=float((1+jan.valor/100).prod());ganho=(r.medio/a.medio/fator-1)*100
-                        st.write(f'Variação real da média, descontado o IPCA desses 12 meses: **{ganho:+.2f}%**.')
+                        st.write('Variação real da média, descontado o IPCA desses 12 meses: **'+br(ganho)+'%**.')
                 if 'minimo' in d:
                     sm=d['minimo'];sm=sm[sm.data.dt.strftime('%Y-%m')==r.mes]
                     if not sm.empty:st.write('Média / salário mínimo da competência: **'+br(r.medio/sm.iloc[-1].valor*100)+'%**.')
