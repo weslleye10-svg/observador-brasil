@@ -98,6 +98,52 @@ def combinar_beneficios(qtd,valores):
     df['medio']=df.valor_reais/df.quantidade
     return df.sort_values('mes')
 
+def exibir_evolucao_beneficios(hist,programa):
+    st.subheader('Evolução dos benefícios — '+programa)
+    anual=programa=='Bolsa Família'
+    periodo=st.selectbox('Período para analisar',['Últimos 5 anos','Últimos 10 anos','Série completa'],key='janela_evolucao_beneficios')
+    indicador=st.selectbox('Qual informação mostrar no gráfico?',['Quantidade de benefícios','Valor médio por benefício','Valor total da competência'],key='metrica_evolucao_beneficios')
+    st.write('Cada ponto mostra **'+indicador.lower()+'**'+(' em **dezembro de cada ano**.' if anual else ' na **competência mensal**.'))
+    st.caption('Quantidade mede atendimento, não dinheiro. Média e total são valores em reais. Benefícios não são necessariamente pessoas únicas. Mudanças de desenho e nome do programa podem limitar a comparação histórica.')
+    dados=hist.copy().sort_values('mes')
+    if periodo!='Série completa':
+        anos=5 if periodo=='Últimos 5 anos' else 10
+        dados=dados[dados.mes.str[:4].astype(int)>=int(dados.iloc[-1].mes[:4])-anos+1]
+    campo={'Quantidade de benefícios':'quantidade','Valor médio por benefício':'medio','Valor total da competência':'valor_reais'}[indicador]
+    inicial=dados.iloc[0];final=dados.iloc[-1];diferenca=float(final[campo]-inicial[campo]);pct=variacao(final[campo],inicial[campo])
+    fmt=(lambda v:br(v,0)+' benefícios') if campo=='quantidade' else (lambda v:'R$ '+br(v))
+    def rotulo(m):return m[:4]+' (dezembro)' if anual else m[5:]+'/'+m[:4]
+    with st.container(border=True):
+        st.write('**Comparação do período selecionado**')
+        st.write('Início · '+rotulo(inicial.mes)+': **'+fmt(inicial[campo])+'**')
+        st.write('Último dado · '+rotulo(final.mes)+': **'+fmt(final[campo])+'**')
+        sinal='+' if diferenca>=0 else ''
+        st.write('Diferença: **'+sinal+fmt(diferenca)+'**'+(' · **'+('+' if pct>=0 else '')+br(pct)+'%**' if pct is not None else ''))
+        st.caption('Comparação entre o primeiro e o último ponto exibidos; não é variação anual nem prova de corte, fraude ou revisão cadastral.')
+    escala=1e6 if campo=='quantidade' else 1e9 if campo=='valor_reais' else 1
+    unidade='Milhões de benefícios' if campo=='quantidade' else 'R$ bilhões na competência' if campo=='valor_reais' else 'R$ por benefício'
+    dados['Data']=pd.to_datetime(dados.mes+'-01')
+    dados['Valor no eixo']=dados[campo]/escala
+    dados['Leitura exata']=dados[campo].map(fmt)
+    dados['Referência']=dados.mes.map(rotulo)
+    fig=px.line(dados,x='Data',y='Valor no eixo',markers=True,custom_data=['Referência','Leitura exata'])
+    fig.update_traces(line=dict(color='#38bdf8',width=3),marker=dict(size=7),hovertemplate='%{customdata[0]}<br><b>%{customdata[1]}</b><extra></extra>')
+    datas=dados.iloc[::max(1,len(dados)//4)]
+    if datas.iloc[-1].mes!=dados.iloc[-1].mes:datas=pd.concat([datas,dados.tail(1)])
+    fig.update_xaxes(title='Ano — posição de dezembro' if anual else 'Mês de referência',tickvals=datas.Data,ticktext=datas.mes.map(lambda m:m[:4] if anual else m[5:]+'/'+m[:4]),tickangle=0,fixedrange=True)
+    ajustar=st.toggle('Destacar variações com escala ajustada',False,key='escala_evolucao_beneficios')
+    fig.update_yaxes(title=unidade,rangemode='normal' if ajustar else 'tozero',tickformat=',.1f' if escala>1 else ',.0f',fixedrange=True,automargin=True)
+    fig.update_layout(height=330,separators=',.',margin=dict(l=15,r=15,t=15,b=20),showlegend=False,dragmode=False)
+    st.plotly_chart(fig,width='stretch',config={'displayModeBar':False,'scrollZoom':False})
+    st.caption('Escala ajustada: o eixo vertical pode não começar em zero; isso amplia visualmente as diferenças.' if ajustar else 'Eixo vertical começa em zero. Valores em milhões/bilhões conforme a unidade indicada. Não é necessário ampliar o gráfico para consultar os números abaixo.')
+    st.write('**Valores exatos — últimos pontos do período**')
+    tabela=dados.tail(12).iloc[::-1].copy()
+    tabela['Quantidade']=tabela.quantidade.map(lambda x:br(x,0))
+    tabela['Média (R$)']=tabela.medio.map(lambda x:'R$ '+br(x))
+    tabela['Total (R$ bilhões)']=tabela.valor_reais.map(lambda x:br(x/1e9,3))
+    st.dataframe(tabela[['Referência','Quantidade','Média (R$)','Total (R$ bilhões)']],hide_index=True,width='stretch')
+    st.caption('Total e média são nominais, sem descontar inflação. Fonte: Ipeadata/MDS, séries nacionais; referência indicada em cada linha.')
+
 def sgs(codigo):
     if codigo not in (1207,433,1619):raise ValueError('Série não permitida')
     quantidade=40 if codigo==1207 else 36 if codigo==1619 else 500
@@ -221,7 +267,7 @@ def exibir_orcamento():
                 if 'minimo' in d:
                     sm=d['minimo'];sm=sm[sm.data.dt.strftime('%Y-%m')==r.mes]
                     if not sm.empty:st.write('Média / salário mínimo da competência: **'+br(r.medio/sm.iloc[-1].valor*100)+'%**.')
-            st.line_chart(hist.set_index('mes')[['quantidade']],width='stretch')
+            exibir_evolucao_beneficios(hist,programa)
             with st.expander('Série de beneficiários e valores'):
                 st.dataframe(hist[['mes','quantidade','valor_reais','medio']],hide_index=True,width='stretch')
                 st.download_button('Baixar benefícios em CSV',hist.to_csv(index=False,sep=';',decimal=','),'beneficios.csv','text/csv')
